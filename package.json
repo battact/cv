@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && npm run deploy:website",
+    "deploy:infra": "cd infra && cdk deploy",
+    "deploy:website": "aws s3 sync dist/ s3://$(node -e \"console.log(require('./infra/bin/infra').config.domainName + '-website')\") --delete && aws cloudfront create-invalidation --distribution-id $(aws cloudformation describe-stacks --stack-name CvInfrastructureStack --query 'Stacks[0].Outputs[?OutputKey==`CloudFrontDistributionId`].OutputValue' --output text) --paths '/*'"
   },
   "dependencies": {
     "react": "^19.1.0",

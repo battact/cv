@@ -1054,6 +1054,7 @@ html {
   /* Stack alternating layout on tablet */
   .section-content {
     grid-template-columns: 1fr;
+    grid-template-areas: "header" "content";
     gap: 4%;
     padding: 6% 5% 4% 5%;
   }
@@ -1061,6 +1062,15 @@ html {
   .section-header {
     order: -1;
     text-align: center;
+    grid-area: header;
+  }
+  
+  .about-content,
+  .experience-list,
+  .skills-icons-grid,
+  .education-list,
+  .contact-content {
+    grid-area: content;
   }
 }
 
@@ -1117,12 +1127,23 @@ html {
   }
   
   .section-content {
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" "content";
     padding: 6% 2% 4% 2%;
     gap: 3%;
   }
   
   .section-header {
     text-align: center;
+    grid-area: header;
+  }
+  
+  .about-content,
+  .experience-list,
+  .skills-icons-grid,
+  .education-list,
+  .contact-content {
+    grid-area: content;
   }
   
   .section-header h2::after {
@@ -1201,6 +1222,8 @@ html {
   }
   
   .section-content {
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" "content";
     padding: 3% 1% 2% 1%;
     gap: 2%;
     width: 100%;
@@ -1333,6 +1356,24 @@ html {
     padding-left: 0 !important;
     padding-right: 0 !important;
     box-sizing: border-box;
+  }
+  
+  .section-content {
+    grid-template-columns: 1fr !important;
+    grid-template-areas: "header" "content" !important;
+    gap: 2% !important;
+  }
+  
+  .section-header {
+    grid-area: header !important;
+  }
+  
+  .about-content,
+  .experience-list,
+  .skills-icons-grid,
+  .education-list,
+  .contact-content {
+    grid-area: content !important;
   }
   .btn {
     width: 60% !important;

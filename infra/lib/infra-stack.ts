@@ -25,7 +25,7 @@ export class CvInfrastructureStack extends cdk.Stack {
 
     // S3 Bucket for website hosting
     const websiteBucket = new Bucket(this, 'tamasbartos-cv-bucket', {
-      bucketName: siteDomainName,
+      bucketName: domainName,
       websiteIndexDocument: 'index.html',
       websiteErrorDocument: 'error/index.html',
       publicReadAccess: true, 

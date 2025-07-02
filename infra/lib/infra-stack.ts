@@ -81,6 +81,7 @@ export class CvInfrastructureStack extends cdk.Stack {
       sources: [Source.asset(path.resolve(__dirname, '../../dist'))],
       destinationBucket: websiteBucket,
       prune: true,
+      retainOnDelete: false,
     });
   }
 }

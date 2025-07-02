@@ -85,5 +85,12 @@ export class CvInfrastructureStack extends cdk.Stack {
       prune: true,
       retainOnDelete: false,
     });
+
+    // Output the CloudFront distribution ID for invalidation
+    new cdk.CfnOutput(this, 'CloudFrontDistributionId', {
+      value: distribution.distributionId,
+      description: 'CloudFront Distribution ID for cache invalidation',
+      exportName: 'CloudFrontDistributionId',
+    });
   }
 }

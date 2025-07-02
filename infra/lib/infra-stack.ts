@@ -3,7 +3,7 @@ import { Bucket, BlockPublicAccess, BucketAccessControl, HttpMethods } from 'aws
 import { Construct } from 'constructs';
 import { BucketDeployment, Source } from 'aws-cdk-lib/aws-s3-deployment';
 import path from 'path';
-import { AccessLevel, Distribution, SecurityPolicyProtocol } from 'aws-cdk-lib/aws-cloudfront';
+import { AccessLevel, Distribution, SecurityPolicyProtocol, HttpVersion, ViewerProtocolPolicy } from 'aws-cdk-lib/aws-cloudfront';
 import { S3BucketOrigin } from 'aws-cdk-lib/aws-cloudfront-origins';
 import { Certificate } from 'aws-cdk-lib/aws-certificatemanager';
 import { ARecord, HostedZone, RecordTarget } from 'aws-cdk-lib/aws-route53';
@@ -51,10 +51,12 @@ export class CvInfrastructureStack extends cdk.Stack {
       certificate: Certificate.fromCertificateArn(this, 'Certificate', certificateArn),
       defaultBehavior: {
         origin: s3Origin,
+        viewerProtocolPolicy: ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
       },
       defaultRootObject: 'index.html',
       domainNames: [domainName, siteDomainName],
       minimumProtocolVersion: SecurityPolicyProtocol.TLS_V1_2_2018,
+      httpVersion: HttpVersion.HTTP2,
       errorResponses:[
         {
           httpStatus: 404,

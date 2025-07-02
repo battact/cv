@@ -20,6 +20,8 @@ body {
   text-size-adjust: 100%;
 }
 
+
+
 html {
   scroll-behavior: smooth;
 }
@@ -1350,13 +1352,22 @@ html {
 
 @media (max-width: 480px) {
   body, .container, .hero-section, .hero-content, .section-content, .about-content {
-    width: 100vw !important;
-    max-width: 100vw !important;
+    width: 100% !important;
+    max-width: 100% !important;
     margin: 0 !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
     box-sizing: border-box;
   }
+  
+  /* Prevent horizontal scroll */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+
   
   .section-content {
     grid-template-columns: 1fr !important;
@@ -1404,13 +1415,13 @@ html {
     padding: 0.4em 0.6em !important;
   }
   .about-content, .about-text p {
-    width: 100vw !important;
+    width: 100% !important;
     text-align: center !important;
     margin: 0 auto !important;
-    padding: 0 2vw !important;
+    padding: 0 2% !important;
   }
   .section-header, .section-header h2, .section-header p {
-    width: 100vw !important;
+    width: 100% !important;
     text-align: center !important;
     margin: 0 auto !important;
     padding-left: 0 !important;
@@ -1430,8 +1441,8 @@ html {
     font-size: 0.8rem !important;
   }
   .contact-info, .contact-content {
-    width: 100vw !important;
-    max-width: 100vw !important;
+    width: 100% !important;
+    max-width: 100% !important;
     margin: 0 !important;
     padding-left: 0 !important;
     padding-right: 0 !important;

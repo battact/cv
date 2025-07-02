@@ -32,13 +32,6 @@ jobs:
       
     - name: Build application
       run: npm run build
-      
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: build-files
-        path: dist/
-        retention-days: 1
 
   deploy-infrastructure:
     name: Deploy Infrastructure
@@ -50,6 +43,12 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+      
+    - name: Download build artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: build-files
+        path: dist/
       
     - name: Setup Node.js
       uses: actions/setup-node@v4

@@ -1185,6 +1185,158 @@ html {
   .hero-content {
     margin-left: 0;
     text-align: center;
+    padding: 0 1%;
+    max-width: 100%;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .container {
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .section {
+    padding: 0;
+    width: 100%;
+  }
+  
+  .section-content {
+    padding: 3% 1% 2% 1%;
+    gap: 2%;
+    width: 100%;
+  }
+  
+  .section-header {
+    text-align: center;
+    padding: 1% 0;
+    width: 100%;
+  }
+  
+  .section-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .section-header p {
+    font-size: 0.75rem;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .header {
+    padding: 0.5% 0;
+    width: 100%;
+  }
+  
+  .header-content {
+    gap: 1%;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .header-text .name {
+    font-size: 1.1rem;
+  }
+  
+  .header-text .title {
+    font-size: 0.7rem;
+  }
+  
+  .header-nav {
+    gap: 0.5%;
+    justify-content: center;
+  }
+  
+  .nav-link {
+    font-size: 0.5rem;
+    padding: 0.2% 0.3%;
+  }
+  
+  .header-actions {
+    flex-direction: column;
+    gap: 0.5%;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 70%;
+    max-width: 150px;
+    padding: 0.5% 0.8%;
+    font-size: 0.6rem;
+  }
+  
+  .experience-item,
+  .education-item,
+  .contact-item {
+    padding: 2%;
+    width: 100%;
+  }
+  
+  .job-meta,
+  .education-meta {
+    flex-direction: column;
+    gap: 0.3%;
+  }
+  
+  .about-text p {
+    font-size: 0.75rem;
+    text-align: center;
+    width: 100%;
+    padding: 0 1%;
+  }
+  
+  .about-content {
+    width: 100%;
+    padding: 0 1%;
+  }
+  
+  .skills-icons-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.3%;
+    width: 100%;
+  }
+  
+  .skill-icon-item {
+    padding: 0.5%;
+    min-height: 40px;
+    min-width: 40px;
+  }
+  
+  .skill-icon {
+    width: 30%;
+    height: 30%;
+    min-width: 0.7rem;
+    min-height: 0.7rem;
+  }
+  
+  .skill-name {
+    font-size: 0.3rem;
+  }
+  
+  .contact-info {
+    width: 100%;
+    padding: 0;
+  }
+  
+  .contact-content {
+    width: 100%;
+    padding: 0 1%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    margin-left: 0;
+    text-align: center;
     padding: 0 2%;
     max-width: 100%;
   }
@@ -1198,44 +1350,57 @@ html {
   }
   
   .container {
-    padding: 0 0.5%;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
   }
   
   .section {
     padding: 0;
+    width: 100%;
   }
   
   .section-content {
-    padding: 3% 0.5% 2% 0.5%;
+    padding: 4% 1% 2% 1%;
     gap: 2%;
+    width: 100%;
   }
   
   .section-header {
     text-align: center;
     padding: 1% 0;
+    width: 100%;
   }
   
   .section-header h2 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+  }
+  
+  .section-header h2::after {
+    left: 50%;
+    transform: translateX(-50%);
   }
   
   .section-header p {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     text-align: center;
+    width: 100%;
   }
   
   .header {
     padding: 0.5% 0;
+    width: 100%;
   }
   
   .header-content {
     gap: 1%;
     justify-content: center;
     text-align: center;
+    width: 100%;
   }
   
   .header-text .name {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
   
   .header-text .title {
@@ -1249,136 +1414,6 @@ html {
   
   .nav-link {
     font-size: 0.6rem;
-    padding: 0.2% 0.3%;
-  }
-  
-  .header-actions {
-    flex-direction: column;
-    gap: 0.5%;
-    width: 100%;
-    align-items: center;
-  }
-  
-  .btn {
-    width: 80%;
-    max-width: 200px;
-    padding: 0.6% 1%;
-    font-size: 0.7rem;
-  }
-  
-  .experience-item,
-  .education-item,
-  .contact-item {
-    padding: 2%;
-  }
-  
-  .job-meta,
-  .education-meta {
-    flex-direction: column;
-    gap: 0.3%;
-  }
-  
-  .about-text p {
-    font-size: 0.8rem;
-    text-align: center;
-  }
-  
-  .skills-icons-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.3%;
-  }
-  
-  .skill-icon-item {
-    padding: 0.5%;
-    min-height: 45px;
-    min-width: 45px;
-  }
-  
-  .skill-icon {
-    width: 35%;
-    height: 35%;
-    min-width: 0.8rem;
-    min-height: 0.8rem;
-  }
-  
-  .skill-name {
-    font-size: 0.35rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-content {
-    margin-left: 0;
-    text-align: center;
-    padding: 0 3%;
-    max-width: 100%;
-  }
-  
-  .hero-title {
-    font-size: 2.2rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-  
-  .container {
-    padding: 0 1%;
-  }
-  
-  .section {
-    padding: 0;
-  }
-  
-  .section-content {
-    padding: 4% 1% 2% 1%;
-    gap: 2%;
-  }
-  
-  .section-header {
-    text-align: center;
-    padding: 1% 0;
-  }
-  
-  .section-header h2 {
-    font-size: 1.6rem;
-  }
-  
-  .section-header h2::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .section-header p {
-    font-size: 0.9rem;
-    text-align: center;
-  }
-  
-  .header {
-    padding: 0.5% 0;
-  }
-  
-  .header-content {
-    gap: 1%;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  .header-text .name {
-    font-size: 1.4rem;
-  }
-  
-  .header-text .title {
-    font-size: 0.9rem;
-  }
-  
-  .header-nav {
-    gap: 0.5%;
-    justify-content: center;
-  }
-  
-  .nav-link {
-    font-size: 0.7rem;
     padding: 0.3% 0.4%;
   }
   
@@ -1390,16 +1425,17 @@ html {
   }
   
   .btn {
-    width: 85%;
-    max-width: 250px;
-    padding: 0.7% 1.2%;
-    font-size: 0.8rem;
+    width: 75%;
+    max-width: 180px;
+    padding: 0.6% 1%;
+    font-size: 0.7rem;
   }
   
   .experience-item,
   .education-item,
   .contact-item {
     padding: 2%;
+    width: 100%;
   }
   
   .job-meta,
@@ -1409,30 +1445,48 @@ html {
   }
   
   .about-text p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-align: center;
+    width: 100%;
+    padding: 0 1%;
+  }
+  
+  .about-content {
+    width: 100%;
+    padding: 0 1%;
   }
   
   .skills-icons-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.4%;
+    width: 100%;
   }
   
   .skill-icon-item {
     padding: 1%;
-    min-height: 55px;
-    min-width: 55px;
+    min-height: 50px;
+    min-width: 50px;
   }
   
   .skill-icon {
-    width: 40%;
-    height: 40%;
-    min-width: 1.1rem;
-    min-height: 1.1rem;
+    width: 35%;
+    height: 35%;
+    min-width: 1rem;
+    min-height: 1rem;
   }
   
   .skill-name {
-    font-size: 0.45rem;
+    font-size: 0.4rem;
+  }
+  
+  .contact-info {
+    width: 100%;
+    padding: 0;
+  }
+  
+  .contact-content {
+    width: 100%;
+    padding: 0 1%;
   }
 }
 

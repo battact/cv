@@ -6,9 +6,6 @@ const Header: React.FC = () => {
       <div className="container">
         <div className="header-content">
           <div className="header-profile">
-            <div className="profile-picture">
-              {/* Profile picture will go here */}
-            </div>
             <div className="header-text">
               <h1 className="name">TAMÁS BARTOS</h1>
               <h2 className="title">Senior Software Engineer</h2>

@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
 import Header from './components/Header'
+import Hero from './components/Hero'
 import About from './components/About'
 import Experience from './components/Experience'
 import Skills from './components/Skills'
@@ -13,6 +14,7 @@ const App: React.FC = () => {
     <div className="app">
       <Header />
       <main className="main-content">
+        <Hero />
         <About />
         <Experience />
         <Skills />

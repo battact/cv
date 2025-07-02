@@ -155,6 +155,68 @@ html {
   align-items: center;
 }
 
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: left;
+  color: white;
+  max-width: 800px;
+  padding: 0 20px;
+  margin-left: 15%;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
 /* Buttons */
 .btn {
   font-family: 'Poppins', sans-serif;
@@ -292,6 +354,10 @@ html {
 }
 
 /* About section */
+#about .section-content {
+  direction: ltr;
+}
+
 .about-content {
   max-width: 100%;
   margin: 0 auto;
@@ -1144,6 +1210,14 @@ html {
 }
 
 @media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+  
   .header-text .name {
     font-size: 1.8rem;
   }
@@ -1223,6 +1297,14 @@ html {
 }
 
 @media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
   .container {
     padding: 0 15px;
   }

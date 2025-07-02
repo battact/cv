@@ -38,7 +38,6 @@ export class CvInfrastructureStack extends cdk.Stack {
           allowedMethods: [HttpMethods.GET, HttpMethods.PUT, HttpMethods.DELETE, HttpMethods.POST],
           allowedOrigins: ['https://tamasbartos.com'], 
           allowedHeaders: ['*'],
-          exposedHeaders: ['*'],
           maxAge: 3600,
         },
       ],

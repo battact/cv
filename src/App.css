@@ -1,5 +1,5 @@
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@400;700&family=Roboto+Slab:wght@400;700&family=Lora:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 /* Reset and base styles */
 * {
@@ -64,23 +64,7 @@ html {
   flex-wrap: wrap;
 }
 
-.profile-picture {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
 
-.profile-picture::after {
-  content: '👤';
-  font-size: 2rem;
-  opacity: 0.7;
-}
 
 .header-text .name {
   font-family: 'Playfair Display', serif;
@@ -274,19 +258,21 @@ html {
   background: #f8fafc;
 }
 
-/* Alternating Layout */
+/* Simple Layout - Header on left, content on right */
 .section-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-areas: "header content";
   gap: 80px;
-  align-items: center;
+  align-items: start;
   width: 100%;
   margin: 0 auto;
   padding: 120px 40px 80px 40px;
 }
 
 .section-header {
-  text-align: center;
+  grid-area: header !important;
+  text-align: left;
   padding: 20px;
 }
 
@@ -303,8 +289,7 @@ html {
   content: '';
   position: absolute;
   bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   width: 60px;
   height: 4px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -318,50 +303,15 @@ html {
   line-height: 1.6;
 }
 
-/* Odd sections: Header on left, content on right */
-.section:nth-child(odd) .section-content {
-  direction: ltr;
-}
-
-/* Even sections: Content on left, header on right */
-.section:nth-child(even) .section-content {
-  direction: rtl;
-}
-
-.section:nth-child(even) .section-content > * {
-  direction: ltr;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 60px;
-  color: #1e293b;
-  position: relative;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 2px;
+.about-content,
+.experience-list,
+.skills-icons-grid,
+.education-list,
+.contact-content {
+  grid-area: content;
 }
 
 /* About section */
-#about .section-content {
-  direction: ltr;
-}
-
-.about-content {
-  max-width: 100%;
-  margin: 0 auto;
-}
 
 .about-text p {
   font-size: 1.1rem;
@@ -417,15 +367,7 @@ html {
   min-width: 200px;
 }
 
-.tech-tag-more {
-  background: linear-gradient(135deg, #64748b 0%, #475569 100%);
-  color: white;
-  padding: 6px 12px;
-  border-radius: 16px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  margin-left: 8px;
-}
+
 
 .btn-more {
   font-family: 'Playfair Display', serif;
@@ -914,6 +856,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 12px;
 }
 
 .email-address {
@@ -930,6 +873,36 @@ html {
 .contact-item:hover .email-address {
   border-color: #667eea;
   background: linear-gradient(135deg, #667eea15, #764ba215);
+}
+
+.copy-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  padding: 0;
+}
+
+.copy-button svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.copy-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(102, 126, 234, 0.3);
+}
+
+.copy-button:active {
+  transform: translateY(0);
 }
 
 .contact-links {
@@ -959,213 +932,8 @@ html {
   color: white;
 }
 
-/* 2K Display Optimization (2560px and above) */
-@media (min-width: 2560px) {
-  .container {
-    width: 100%;
-    padding: 0 60px;
-  }
-  
-  .section-content {
-    width: 100%;
-    padding: 0 60px;
-    gap: 100px;
-  }
-  
-  .header-text .name {
-    font-size: 3rem;
-  }
-  
-  .header-text .title {
-    font-size: 1.6rem;
-  }
-  
-  .header-text .subtitle {
-    font-size: 1.1rem;
-  }
-  
-  .nav-link {
-    font-size: 1.1rem;
-    padding: 10px 16px;
-  }
-  
-  .btn {
-    padding: 12px 24px;
-    font-size: 1rem;
-  }
-  
-  .section-header h2 {
-    font-size: 3rem;
-  }
-  
-  .section-header p {
-    font-size: 1.3rem;
-  }
-  
-  .about-text p {
-    font-size: 1.3rem;
-  }
-  
-  .job-title {
-    font-size: 1.8rem;
-  }
-  
-  .company {
-    font-size: 1.3rem;
-  }
-  
-  .period {
-    font-size: 1.2rem;
-  }
-  
-  .job-technologies h4,
-  .job-achievements h4,
-  .job-responsibilities h4 {
-    font-size: 1.3rem;
-  }
-  
-  .tech-tag {
-    font-size: 1rem;
-    padding: 8px 16px;
-  }
-  
-  .achievement-item {
-    font-size: 1.1rem;
-  }
-  
-  .job-description li {
-    font-size: 1.1rem;
-  }
-  
-  .degree {
-    font-size: 1.7rem;
-  }
-  
-  .institution {
-    font-size: 1.3rem;
-  }
-  
-  .education-description {
-    font-size: 1.1rem;
-  }
-  
-  .contact-item h3 {
-    font-size: 1.4rem;
-  }
-  
-  .contact-info {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 40px;
-  }
-  
-  .contact-item {
-    padding: 35px;
-  }
-}
 
-/* 4K Display Optimization (3840px and above) */
-@media (min-width: 3840px) {
-  .container {
-    width: 100%;
-    padding: 0 80px;
-  }
-  
-  .section-content {
-    width: 100%;
-    padding: 0 80px;
-    gap: 120px;
-  }
-  
-  .header-text .name {
-    font-size: 4rem;
-  }
-  
-  .header-text .title {
-    font-size: 2rem;
-  }
-  
-  .header-text .subtitle {
-    font-size: 1.3rem;
-  }
-  
-  .nav-link {
-    font-size: 1.3rem;
-    padding: 12px 20px;
-  }
-  
-  .btn {
-    padding: 15px 30px;
-    font-size: 1.2rem;
-  }
-  
-  .section-header h2 {
-    font-size: 4rem;
-  }
-  
-  .section-header p {
-    font-size: 1.6rem;
-  }
-  
-  .about-text p {
-    font-size: 1.6rem;
-  }
-  
-  .job-title {
-    font-size: 2.2rem;
-  }
-  
-  .company {
-    font-size: 1.6rem;
-  }
-  
-  .period {
-    font-size: 1.4rem;
-  }
-  
-  .job-technologies h4,
-  .job-achievements h4,
-  .job-responsibilities h4 {
-    font-size: 1.6rem;
-  }
-  
-  .tech-tag {
-    font-size: 1.2rem;
-    padding: 10px 20px;
-  }
-  
-  .achievement-item {
-    font-size: 1.3rem;
-  }
-  
-  .job-description li {
-    font-size: 1.3rem;
-  }
-  
-  .degree {
-    font-size: 2.1rem;
-  }
-  
-  .institution {
-    font-size: 1.6rem;
-  }
-  
-  .education-description {
-    font-size: 1.3rem;
-  }
-  
-  .contact-item h3 {
-    font-size: 1.7rem;
-  }
-  
-  .contact-info {
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 50px;
-  }
-  
-  .contact-item {
-    padding: 45px;
-  }
-}
+
 
 /* Responsive design */
 @media (max-width: 1200px) {
@@ -1391,10 +1159,4 @@ html {
   opacity: 0.9;
 }
 
-.section-narrow .section-content {
-  max-width: 800px;
-  margin: 0 auto;
-  width: 100%;
-  display: block;
-  padding: 0 40px;
-}
+

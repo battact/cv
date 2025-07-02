@@ -1076,8 +1076,8 @@ html {
   .hero-content {
     margin-left: 0;
     text-align: center;
-    padding: 0 3%;
-    max-width: 80%;
+    padding: 0 4%;
+    max-width: 100%;
   }
   
   .hero-title {
@@ -1125,7 +1125,7 @@ html {
   }
   
   .section-content {
-    padding: 6% 3% 4% 3%;
+    padding: 6% 2% 4% 2%;
     gap: 3%;
   }
   
@@ -1184,8 +1184,8 @@ html {
   .hero-content {
     margin-left: 0;
     text-align: center;
-    padding: 0 2%;
-    max-width: 90%;
+    padding: 0 4%;
+    max-width: 100%;
   }
   
   .hero-title {
@@ -1197,7 +1197,7 @@ html {
   }
   
   .container {
-    padding: 0 3%;
+    padding: 0 2%;
   }
   
   .section {
@@ -1205,13 +1205,13 @@ html {
   }
   
   .section-content {
-    padding: 5% 3% 3% 3%;
+    padding: 5% 2% 3% 2%;
     gap: 3%;
   }
   
   .section-header {
     text-align: center;
-    padding: 2% 1%;
+    padding: 2% 0;
   }
   
   .section-header h2 {
@@ -1268,7 +1268,7 @@ html {
   .experience-item,
   .education-item,
   .contact-item {
-    padding: 2%;
+    padding: 3%;
   }
   
   .job-meta,
@@ -1288,7 +1288,7 @@ html {
   }
   
   .skill-icon-item {
-    padding: 1%;
+    padding: 2%;
     min-height: 60px;
     min-width: 60px;
   }

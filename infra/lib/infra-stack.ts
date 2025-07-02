@@ -3,34 +3,40 @@ import { Bucket, BlockPublicAccess, BucketAccessControl, HttpMethods } from 'aws
 import { Construct } from 'constructs';
 import { BucketDeployment, Source } from 'aws-cdk-lib/aws-s3-deployment';
 import path from 'path';
-import { Distribution, OriginAccessIdentity } from 'aws-cdk-lib/aws-cloudfront';
-import { S3Origin, S3StaticWebsiteOrigin } from 'aws-cdk-lib/aws-cloudfront-origins';
+import { Distribution, OriginAccessIdentity, SecurityPolicyProtocol } from 'aws-cdk-lib/aws-cloudfront';
+import { S3StaticWebsiteOrigin } from 'aws-cdk-lib/aws-cloudfront-origins';
 import { Certificate } from 'aws-cdk-lib/aws-certificatemanager';
+import { ARecord, HostedZone, RecordTarget } from 'aws-cdk-lib/aws-route53';
+import { Duration } from 'aws-cdk-lib';
+import { CloudFrontTarget } from 'aws-cdk-lib/aws-route53-targets';
+import { zoneConfig } from '../config/zone-config';
 
 export class CvInfrastructureStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props: cdk.StackProps) {
     super(scope, id, props);
 
     
-    const domainName = `tamas-bartos.com`;
-    // const hostedZoneId = `Z05555555555555555555`;
-    const certificateArn = `arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012`;
-    const bucketName = `tamas-bartos-cv`;
+    const { domainName, siteDomainName, hostedZoneId, certificateArn } = zoneConfig;
+
+    const hostedZone = HostedZone.fromHostedZoneAttributes(this, 'myHostenZone', {
+      hostedZoneId: hostedZoneId,
+      zoneName: domainName,
+    });
 
     // S3 Bucket for website hosting
-    const websiteBucket = new Bucket(this, bucketName, {
-      bucketName: bucketName,
+    const websiteBucket = new Bucket(this, 'tamasbartos-cv-bucket', {
+      bucketName: siteDomainName,
       websiteIndexDocument: 'index.html',
-      websiteErrorDocument: 'index.html',
-      publicReadAccess: false, 
-      blockPublicAccess: BlockPublicAccess.BLOCK_ALL,
+      websiteErrorDocument: 'error/index.html',
+      publicReadAccess: true, 
+      blockPublicAccess: BlockPublicAccess.BLOCK_ACLS_ONLY,
       accessControl: BucketAccessControl.PRIVATE,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
       autoDeleteObjects: true,
       cors: [
         {
           allowedMethods: [HttpMethods.GET, HttpMethods.PUT, HttpMethods.DELETE, HttpMethods.POST],
-          allowedOrigins: ['https://tamas-bartos.com'], 
+          allowedOrigins: ['https://tamasbartos.com'], 
           allowedHeaders: ['*'],
           exposedHeaders: ['*'],
           maxAge: 3600,
@@ -41,19 +47,39 @@ export class CvInfrastructureStack extends cdk.Stack {
     const originAccessIdentity = new OriginAccessIdentity(this, 'OriginAccessIdentity');
     websiteBucket.grantRead(originAccessIdentity);
 
-    new Distribution(this, 'tamas-bartos-cv-distribution', {
-      defaultRootObject: 'index.html',
+    const distribution = new Distribution(this, 'tamasbartos-cv-distribution', {
+      certificate: Certificate.fromCertificateArn(this, 'Certificate', certificateArn),
       defaultBehavior: {
         origin: new S3StaticWebsiteOrigin(websiteBucket, {
           originAccessControlId: originAccessIdentity.originAccessIdentityId,
         }),
       },
-      domainNames: [domainName],
-      certificate: Certificate.fromCertificateArn(this, 'Certificate', certificateArn),
+      defaultRootObject: 'index.html',
+      domainNames: [domainName, siteDomainName],
+      minimumProtocolVersion: SecurityPolicyProtocol.TLS_V1_2_2018,
+      errorResponses:[
+        {
+          httpStatus: 404,
+          responseHttpStatus: 404,
+          responsePagePath: '/error/index.html',
+          ttl: Duration.minutes(30),
+        }
+      ],
     })
 
+    new ARecord(this, 'WWWSiteAliasRecord', {
+      zone: hostedZone,
+      recordName: siteDomainName,
+      target: RecordTarget.fromAlias(new CloudFrontTarget(distribution))
+    });
 
-    new BucketDeployment(this, 'tamas-bartos-cv-deployment', {
+    new ARecord(this, 'SiteAliasRecord', {
+      zone: hostedZone,
+      recordName: domainName,
+      target: RecordTarget.fromAlias(new CloudFrontTarget(distribution))
+    });
+
+    new BucketDeployment(this, 'tamasbartos-cv-deployment', {
       sources: [Source.asset(path.resolve(__dirname, '../../dist'))],
       destinationBucket: websiteBucket,
       prune: true,

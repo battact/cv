@@ -3,8 +3,8 @@ import { Bucket, BlockPublicAccess, BucketAccessControl, HttpMethods } from 'aws
 import { Construct } from 'constructs';
 import { BucketDeployment, Source } from 'aws-cdk-lib/aws-s3-deployment';
 import path from 'path';
-import { Distribution, OriginAccessIdentity, SecurityPolicyProtocol } from 'aws-cdk-lib/aws-cloudfront';
-import { S3StaticWebsiteOrigin } from 'aws-cdk-lib/aws-cloudfront-origins';
+import { AccessLevel, Distribution, SecurityPolicyProtocol } from 'aws-cdk-lib/aws-cloudfront';
+import { S3BucketOrigin } from 'aws-cdk-lib/aws-cloudfront-origins';
 import { Certificate } from 'aws-cdk-lib/aws-certificatemanager';
 import { ARecord, HostedZone, RecordTarget } from 'aws-cdk-lib/aws-route53';
 import { Duration } from 'aws-cdk-lib';
@@ -43,15 +43,14 @@ export class CvInfrastructureStack extends cdk.Stack {
       ],
     });
 
-    const originAccessIdentity = new OriginAccessIdentity(this, 'OriginAccessIdentity');
-    websiteBucket.grantRead(originAccessIdentity);
+    const s3Origin = S3BucketOrigin.withOriginAccessControl(websiteBucket, {
+      originAccessLevels: [AccessLevel.LIST, AccessLevel.READ ]
+    });
 
     const distribution = new Distribution(this, 'tamasbartos-cv-distribution', {
       certificate: Certificate.fromCertificateArn(this, 'Certificate', certificateArn),
       defaultBehavior: {
-        origin: new S3StaticWebsiteOrigin(websiteBucket, {
-          originAccessControlId: originAccessIdentity.originAccessIdentityId,
-        }),
+        origin: s3Origin,
       },
       defaultRootObject: 'index.html',
       domainNames: [domainName, siteDomainName],

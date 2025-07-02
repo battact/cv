@@ -1079,9 +1079,14 @@ html {
 @media (max-width: 768px) {
   .hero-content {
     margin-left: 0;
+    margin-top: 300px;
     text-align: center;
     padding: 0 4%;
     max-width: 100%;
+  }
+  
+  .hero-image {
+    object-position: 60% top;
   }
   
   .hero-title {
@@ -1160,25 +1165,33 @@ html {
   }
   
   .skill-icon-item {
-    padding: 0.1%;
-    min-height: 6px;
-    min-width: 6px;
+    padding: 3%;
+    min-height: 100px;
+    min-width: 100px;
   }
   
   .skill-icon {
-    width: 30%;
-    height: 30%;
-    min-width: 0.8rem;
-    min-height: 0.8rem;
+    width: 60%;
+    height: 60%;
+    min-width: 3rem;
+    min-height: 3rem;
   }
   
   .skill-icon svg {
-    width: 50%;
-    height: 50%;
+    width: 85%;
+    height: 85%;
   }
   
   .skill-name {
-    font-size: 0.3rem;
+    font-size: 0.7rem;
+  }
+  
+  .skill-icon-item:hover .skill-icon {
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+  
+  .skill-icon-item:hover .skill-icon svg {
+    transform: scale(0.8);
   }
   
   .contact-info {
@@ -1199,7 +1212,6 @@ html {
 /* OnePlus 12 and similar high-DPI phones */
 @media (max-width: 480px) and (min-resolution: 2dppx) {
   .hero-content {
-    margin-left: 0;
     text-align: center;
     padding: 0 1%;
     max-width: 100%;
@@ -1351,7 +1363,7 @@ html {
 }
 
 @media (max-width: 480px) {
-  body, .container, .hero-section, .hero-content, .section-content, .about-content {
+  body, .container, .hero-section, .section-content, .about-content {
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
@@ -1408,6 +1420,8 @@ html {
   .skill-name {
     font-size: 0.7rem !important;
   }
+  
+
   .btn {
     width: 60% !important;
     max-width: 120px !important;

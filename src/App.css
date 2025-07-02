@@ -1180,6 +1180,128 @@ html {
   }
 }
 
+/* OnePlus 12 and similar high-DPI phones */
+@media (max-width: 480px) and (min-resolution: 2dppx) {
+  .hero-content {
+    margin-left: 0;
+    text-align: center;
+    padding: 0 3%;
+    max-width: 100%;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .container {
+    padding: 0 1%;
+  }
+  
+  .section {
+    padding: 0;
+  }
+  
+  .section-content {
+    padding: 4% 1% 2% 1%;
+    gap: 2%;
+  }
+  
+  .section-header {
+    text-align: center;
+    padding: 1% 0;
+  }
+  
+  .section-header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .section-header p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  .header {
+    padding: 0.5% 0;
+  }
+  
+  .header-content {
+    gap: 1%;
+  }
+  
+  .header-text .name {
+    font-size: 1.4rem;
+  }
+  
+  .header-text .title {
+    font-size: 0.9rem;
+  }
+  
+  .header-nav {
+    gap: 0.5%;
+  }
+  
+  .nav-link {
+    font-size: 0.7rem;
+    padding: 0.3% 0.4%;
+  }
+  
+  .header-actions {
+    flex-direction: column;
+    gap: 0.5%;
+    width: 100%;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 95%;
+    padding: 0.8% 1.2%;
+    font-size: 0.8rem;
+  }
+  
+  .experience-item,
+  .education-item,
+  .contact-item {
+    padding: 2%;
+  }
+  
+  .job-meta,
+  .education-meta {
+    flex-direction: column;
+    gap: 0.3%;
+  }
+  
+  .about-text p {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+  
+  .skills-icons-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4%;
+  }
+  
+  .skill-icon-item {
+    padding: 1%;
+    min-height: 50px;
+    min-width: 50px;
+  }
+  
+  .skill-icon {
+    width: 40%;
+    height: 40%;
+    min-width: 1rem;
+    min-height: 1rem;
+  }
+  
+  .skill-name {
+    font-size: 0.4rem;
+  }
+}
+
 @media (max-width: 480px) {
   .hero-content {
     margin-left: 0;

@@ -44,11 +44,11 @@ jobs:
       - name: Run linting
         run: pnpm lint
 
-      - name: Run infrastructure tests
-        run: pnpm --filter infra test
-
       - name: Build application
         run: pnpm build
+
+      - name: Run infrastructure tests
+        run: pnpm --filter infra test
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4

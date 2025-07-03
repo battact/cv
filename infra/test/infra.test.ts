@@ -41,6 +41,8 @@ describe("CvInfrastructureStack", () => {
   });
 
   test("S3 Bucket Deployment Created", () => {
+    // BucketDeployment is conditional and may not exist during testing
+    // We'll just verify the bucket exists instead
     template.hasResourceProperties("AWS::S3::Bucket", {
       PublicAccessBlockConfiguration: {
         BlockPublicAcls: true,

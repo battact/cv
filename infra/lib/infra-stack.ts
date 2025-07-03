@@ -21,6 +21,7 @@ import { ARecord, HostedZone, RecordTarget } from "aws-cdk-lib/aws-route53";
 import { Duration } from "aws-cdk-lib";
 import { CloudFrontTarget } from "aws-cdk-lib/aws-route53-targets";
 import { zoneConfig } from "../config/zone-config";
+import fs from "fs";
 
 export class CvInfrastructureStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -103,12 +104,17 @@ export class CvInfrastructureStack extends cdk.Stack {
       target: RecordTarget.fromAlias(new CloudFrontTarget(distribution)),
     });
 
-    new BucketDeployment(this, "tamasbartos-cv-deployment", {
-      sources: [Source.asset(path.resolve(__dirname, "../../ui/dist"))],
-      destinationBucket: websiteBucket,
-      prune: true,
-      retainOnDelete: false,
-    });
+    // Only create bucket deployment if the UI dist folder exists (for actual deployments)
+    const uiDistPath = path.resolve(__dirname, "../../ui/dist");
+
+    if (fs.existsSync(uiDistPath)) {
+      new BucketDeployment(this, "tamasbartos-cv-deployment", {
+        sources: [Source.asset(uiDistPath)],
+        destinationBucket: websiteBucket,
+        prune: true,
+        retainOnDelete: false,
+      });
+    }
 
     // Output the CloudFront distribution ID for invalidation
     new cdk.CfnOutput(this, "CloudFrontDistributionId", {

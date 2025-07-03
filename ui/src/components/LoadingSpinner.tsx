@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 interface LoadingSpinnerProps {
   size?: 'small' | 'medium' | 'large'
@@ -13,7 +13,7 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
     small: '20px',
     medium: '40px',
     large: '60px'
-  }
+  };
 
   return (
     <div 
@@ -24,7 +24,7 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
         borderColor: color
       }}
     />
-  )
-}
+  );
+};
 
-export default LoadingSpinner 
+export default LoadingSpinner; 

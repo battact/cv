@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const About: React.FC = () => {
   return (
@@ -21,7 +21,7 @@ const About: React.FC = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default About 
+export default About; 

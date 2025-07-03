@@ -1,23 +1,23 @@
-import React, { useState } from 'react'
-import { SiLinkedin, SiGithub } from 'react-icons/si'
-import { FaEnvelope, FaMapMarkerAlt, FaCopy, FaCheck } from 'react-icons/fa'
+import React, { useState } from 'react';
+import { SiLinkedin, SiGithub } from 'react-icons/si';
+import { FaEnvelope, FaCopy, FaCheck } from 'react-icons/fa';
 
-const email = "tamas.bartos.92@gmail.com"
-const linkedin = "https://www.linkedin.com/in/tam%C3%A1s-bartos-5654aa133/"
-const github = "https://github.com/battact"
+const email = "tamas.bartos.92@gmail.com";
+const linkedin = "https://www.linkedin.com/in/tam%C3%A1s-bartos-5654aa133/";
+const github = "https://github.com/battact";
 
 const Contact: React.FC = () => {
-  const [copied, setCopied] = useState(false)
+  const [copied, setCopied] = useState(false);
 
   const copyEmail = async () => {
     try {
-      await navigator.clipboard.writeText(email)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.error('Failed to copy email:', err)
+      console.error('Failed to copy email:', err);
     }
-  }
+  };
 
   return (
     <section id="contact" className="section">
@@ -75,7 +75,7 @@ const Contact: React.FC = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contact 
+export default Contact; 

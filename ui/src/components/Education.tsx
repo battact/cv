@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 interface EducationItem {
   degree: string
@@ -19,7 +19,7 @@ const Education: React.FC = () => {
       institution: "University of Szeged",
       period: "2011 - 2017"
     }
-  ]
+  ];
 
   return (
     <section id="education" className="section">
@@ -43,7 +43,7 @@ const Education: React.FC = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Education 
+export default Education; 

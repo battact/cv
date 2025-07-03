@@ -1,36 +1,45 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import tseslint from 'typescript-eslint'
+import { Linter } from 'eslint';
+import eslintPluginReact from 'eslint-plugin-react';
+import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
+import eslintPluginReactRefresh from 'eslint-plugin-react-refresh';
+import { baseConfig } from '../eslint.config';
 
-export default [
-  { ignores: ['dist'] },
+const sharedConfig = baseConfig[0];
+const config: Linter.Config[] = [
   {
-    files: ['**/*.{js,jsx,ts,tsx}'],
-    languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
-      parserOptions: {
-        ecmaVersion: 'latest',
-        ecmaFeatures: { jsx: true },
-        sourceType: 'module',
-      },
-    },
+    ignores: [
+      "**/dist/**",
+      "**/node_modules/**",
+      "**/build/**"
+    ]
+  },
+  {
+    ...sharedConfig
+  },
+  {
     plugins: {
-      'react-hooks': reactHooks,
-      'react-refresh': reactRefresh,
+      ...sharedConfig.plugins,
+      react: eslintPluginReact,
+      'react-hooks': eslintPluginReactHooks,
+      'react-refresh': eslintPluginReactRefresh
     },
     rules: {
-      ...js.configs.recommended.rules,
-      ...reactHooks.configs.recommended.rules,
-      'no-unused-vars': 'off', // Turn off base rule as it can report incorrect errors
-      '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true },
-      ],
+      ...sharedConfig.rules,
+      // React specific rules
+      'react/react-in-jsx-scope': 'off', // Not needed with modern JSX transform
+      'react/prop-types': 'off', // Not needed with TypeScript
+      'react/jsx-uses-react': 'off', // Not needed with modern JSX transform
+      'react/jsx-uses-vars': 'error',
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
+      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }]
     },
-  },
-  ...tseslint.configs.recommended,
-] 
+    settings: {
+      react: {
+        version: 'detect'
+      }
+    }
+  }
+];
+
+export default config;

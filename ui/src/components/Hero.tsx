@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Hero: React.FC = () => {
   return (
@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero 
+export default Hero; 

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react';
 
 interface UseIntersectionObserverOptions {
   threshold?: number
@@ -9,42 +9,42 @@ interface UseIntersectionObserverOptions {
 export const useIntersectionObserver = (
   options: UseIntersectionObserverOptions = {}
 ) => {
-  const { threshold = 0.1, rootMargin = '0px', triggerOnce = true } = options
-  const [isIntersecting, setIsIntersecting] = useState(false)
-  const [hasTriggered, setHasTriggered] = useState(false)
-  const ref = useRef<HTMLElement>(null)
+  const { threshold = 0.1, rootMargin = '0px', triggerOnce = true } = options;
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const [hasTriggered, setHasTriggered] = useState(false);
+  const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const element = ref.current
-    if (!element) return
+    const element = ref.current;
+    if (!element) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        const isElementIntersecting = entry.isIntersecting
+        const isElementIntersecting = entry.isIntersecting;
         
-        if (triggerOnce && hasTriggered) return
+        if (triggerOnce && hasTriggered) return;
         
         if (isElementIntersecting) {
-          setIsIntersecting(true)
+          setIsIntersecting(true);
           if (triggerOnce) {
-            setHasTriggered(true)
+            setHasTriggered(true);
           }
         } else if (!triggerOnce) {
-          setIsIntersecting(false)
+          setIsIntersecting(false);
         }
       },
       {
         threshold,
         rootMargin,
       }
-    )
+    );
 
-    observer.observe(element)
+    observer.observe(element);
 
     return () => {
-      observer.unobserve(element)
-    }
-  }, [threshold, rootMargin, triggerOnce, hasTriggered])
+      observer.unobserve(element);
+    };
+  }, [threshold, rootMargin, triggerOnce, hasTriggered]);
 
-  return { ref, isIntersecting }
-} 
+  return { ref, isIntersecting };
+}; 

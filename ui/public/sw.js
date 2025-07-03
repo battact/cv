@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cv-website-v1'
+const CACHE_NAME = 'cv-website-v1';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -6,17 +6,17 @@ const urlsToCache = [
   '/src/App.css',
   '/tamasbartos.jpg',
   '/tamas_bartos_cv.pdf'
-]
+];
 
 // Install event
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
-        return cache.addAll(urlsToCache)
+        return cache.addAll(urlsToCache);
       })
-  )
-})
+  );
+});
 
 // Fetch event
 self.addEventListener('fetch', (event) => {
@@ -24,10 +24,10 @@ self.addEventListener('fetch', (event) => {
     caches.match(event.request)
       .then((response) => {
         // Return cached version or fetch from network
-        return response || fetch(event.request)
+        return response || fetch(event.request);
       })
-  )
-})
+  );
+});
 
 // Activate event
 self.addEventListener('activate', (event) => {
@@ -36,10 +36,10 @@ self.addEventListener('activate', (event) => {
       return Promise.all(
         cacheNames.map((cacheName) => {
           if (cacheName !== CACHE_NAME) {
-            return caches.delete(cacheName)
+            return caches.delete(cacheName);
           }
         })
-      )
+      );
     })
-  )
-}) 
+  );
+}); 

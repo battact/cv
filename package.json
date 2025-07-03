@@ -1,26 +1,39 @@
 {
-  "name": "cv-project",
+  "name": "ui",
   "private": true,
   "version": "1.0.0",
   "description": "CV Website with Infrastructure",
   "scripts": {
-    "dev": "cd ui && npm run dev",
-    "build": "cd ui && npm run build",
-    "lint": "cd ui && npm run lint",
-    "preview": "cd ui && npm run preview",
-    "deploy": "cd ui && npm run deploy",
-    "deploy:infra": "cd infra && npm run cdk deploy",
-    "deploy:website": "cd ui && npm run deploy:website",
-    "install:all": "npm install && cd ui && npm install && cd ../infra && npm install",
-    "clean": "cd ui && rm -rf dist node_modules .vite && cd ../infra && rm -rf dist node_modules"
+    "dev": "pnpm --filter ui dev",
+    "build": "pnpm --filter ui build",
+    "lint": "pnpm --filter ui lint",
+    "preview": "pnpm --filter ui preview",
+    "deploy": "pnpm --filter ui deploy",
+    "deploy:infra": "pnpm --filter infra cdk deploy",
+    "deploy:website": "pnpm --filter ui deploy:website",
+    "test": "pnpm --filter infra test",
+    "install:all": "pnpm install",
+    "clean": "pnpm -r exec rm -rf dist node_modules .vite"
   },
-  "workspaces": [
-    "ui",
-    "infra"
-  ],
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/eslint": "^9.6.1",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^24.0.10",
+    "@typescript-eslint/eslint-plugin": "^8.35.1",
+    "@typescript-eslint/parser": "^8.35.1",
+    "jest": "^29.7.0",
+    "prettier": "^3.6.2",
+    "eslint": "^9.30.1",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "jiti": "^2.4.2",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
   "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=8.0.0"
+    "node": ">=22.0.0",
+    "pnpm": ">=8.0.0"
   }
-} 
+}

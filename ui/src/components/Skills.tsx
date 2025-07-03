@@ -1,20 +1,20 @@
-import React from 'react'
+import React from 'react';
 import { 
   SiJavascript, SiTypescript, SiPython,
   SiReact, SiHtml5, SiCss3, SiNodedotjs, SiAmazon,
   SiDocker, SiGitlab, SiPostgresql, SiJira, SiApachekafka,
   SiGraphql, SiGrafana, SiDatadog
-} from 'react-icons/si'
+} from 'react-icons/si';
 import { 
   FaDatabase
-} from 'react-icons/fa'
+} from 'react-icons/fa';
 import { 
   GiCube
-} from 'react-icons/gi'
+} from 'react-icons/gi';
 import { 
   TbDatabase, TbRefresh
-} from 'react-icons/tb'
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
+} from 'react-icons/tb';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 interface SkillIcon {
   name: string
@@ -27,7 +27,7 @@ const Skills: React.FC = () => {
   const { ref, isIntersecting } = useIntersectionObserver({
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
-  })
+  });
 
   const skills: SkillIcon[] = [
     // Programming Languages & Runtime (ordered by experience)
@@ -59,7 +59,7 @@ const Skills: React.FC = () => {
     { name: "Jira", icon: <SiJira />, color: "#0052cc", category: "Practices" },
     { name: "Grafana", icon: <SiGrafana />, color: "#f46800", category: "Monitoring" },
     { name: "Datadog", icon: <SiDatadog />, color: "#632ba6", category: "Monitoring" }
-  ]
+  ];
 
   return (
     <section id="skills" className="section" ref={ref}>
@@ -87,7 +87,7 @@ const Skills: React.FC = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Skills 
+export default Skills; 

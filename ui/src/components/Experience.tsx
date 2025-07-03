@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 interface ExperienceItem {
   title: string
@@ -16,7 +16,7 @@ interface ExperienceModalProps {
 }
 
 const ExperienceModal: React.FC<ExperienceModalProps> = ({ experience, isOpen, onClose }) => {
-  if (!isOpen) return null
+  if (!isOpen) return null;
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -69,12 +69,12 @@ const ExperienceModal: React.FC<ExperienceModalProps> = ({ experience, isOpen, o
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const Experience: React.FC = () => {
-  const [selectedExperience, setSelectedExperience] = useState<ExperienceItem | null>(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedExperience, setSelectedExperience] = useState<ExperienceItem | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const experiences: ExperienceItem[] = [
     {
@@ -152,17 +152,17 @@ const Experience: React.FC = () => {
         "Improved agricultural system efficiency by 35% through IoT integration and automated processes"
       ]
     }
-  ]
+  ];
 
   const handleMoreClick = (experience: ExperienceItem) => {
-    setSelectedExperience(experience)
-    setIsModalOpen(true)
-  }
+    setSelectedExperience(experience);
+    setIsModalOpen(true);
+  };
 
   const handleCloseModal = () => {
-    setIsModalOpen(false)
-    setSelectedExperience(null)
-  }
+    setIsModalOpen(false);
+    setSelectedExperience(null);
+  };
 
   return (
     <section id="experience" className="section">
@@ -213,7 +213,7 @@ const Experience: React.FC = () => {
         />
       )}
     </section>
-  )
-}
+  );
+};
 
-export default Experience 
+export default Experience; 

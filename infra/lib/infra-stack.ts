@@ -23,7 +23,7 @@ import { CloudFrontTarget } from "aws-cdk-lib/aws-route53-targets";
 import { zoneConfig } from "../config/zone-config";
 
 export class CvInfrastructureStack extends cdk.Stack {
-  constructor(scope: Construct, id: string, props: cdk.StackProps) {
+  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
     const { domainName, siteDomainName, hostedZoneId, certificateArn } =

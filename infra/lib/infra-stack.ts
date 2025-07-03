@@ -80,7 +80,7 @@ export class CvInfrastructureStack extends cdk.Stack {
     });
 
     new BucketDeployment(this, 'tamasbartos-cv-deployment', {
-      sources: [Source.asset(path.resolve(__dirname, '../../dist'))],
+      sources: [Source.asset(path.resolve(__dirname, '../../ui/dist'))],
       destinationBucket: websiteBucket,
       prune: true,
       retainOnDelete: false,

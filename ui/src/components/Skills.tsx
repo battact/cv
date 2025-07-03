@@ -14,6 +14,7 @@ import {
 import { 
   TbDatabase, TbRefresh
 } from 'react-icons/tb'
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 
 interface SkillIcon {
   name: string
@@ -23,6 +24,11 @@ interface SkillIcon {
 }
 
 const Skills: React.FC = () => {
+  const { ref, isIntersecting } = useIntersectionObserver({
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  })
+
   const skills: SkillIcon[] = [
     // Programming Languages & Runtime (ordered by experience)
     { name: "Node.js", icon: <SiNodedotjs />, color: "#339933", category: "Backend" },
@@ -56,8 +62,8 @@ const Skills: React.FC = () => {
   ]
 
   return (
-    <section id="skills" className="section">
-      <div className="section-content">
+    <section id="skills" className="section" ref={ref}>
+      <div className={`section-content ${isIntersecting ? 'fade-in visible' : 'fade-in'}`}>
         <div className="section-header">
           <h2>Skills & Technologies</h2>
           <p>Comprehensive expertise in modern development technologies and methodologies</p>
@@ -66,8 +72,11 @@ const Skills: React.FC = () => {
           {skills.map((skill, index) => (
             <div 
               key={index} 
-              className="skill-icon-item"
-              style={{ '--skill-color': skill.color } as React.CSSProperties}
+              className={`skill-icon-item scale-in ${isIntersecting ? 'visible' : ''}`}
+              style={{ 
+                '--skill-color': skill.color,
+                animationDelay: `${index * 0.1}s`
+              } as React.CSSProperties}
             >
               <div className="skill-icon">
                 {skill.icon}

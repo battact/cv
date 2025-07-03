@@ -44,6 +44,9 @@ jobs:
       - name: Run UI linting
         run: pnpm lint
 
+      - name: Run infrastructure linting
+        run: pnpm --filter infra lint
+
       - name: Build UI application
         run: pnpm build
 

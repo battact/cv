@@ -41,16 +41,16 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run linting
+      - name: Run UI linting
         run: pnpm lint
 
-      - name: Build application
+      - name: Build UI application
         run: pnpm build
 
       - name: Run infrastructure tests
         run: pnpm --filter infra test
 
-      - name: Upload build artifacts
+      - name: Upload UI build artifacts
         uses: actions/upload-artifact@v4
         with:
           name: build-files
@@ -68,7 +68,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Download build artifacts
+      - name: Download UI build artifacts
         uses: actions/download-artifact@v4
         with:
           name: build-files
@@ -100,7 +100,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Install CDK
+      - name: Install AWS CDK CLI
         run: npm install -g aws-cdk
 
       - name: Configure AWS credentials
@@ -110,10 +110,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Bootstrap CDK (if needed)
+      - name: Bootstrap CDK environment (if needed)
         run: pnpm --filter infra cdk bootstrap
 
-      - name: Deploy infrastructure
+      - name: Deploy infrastructure stack
         run: pnpm --filter infra cdk deploy --require-approval never
 
       - name: Invalidate CloudFront cache

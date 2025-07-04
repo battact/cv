@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './experience.css';
 
 interface ExperienceItem {
   title: string

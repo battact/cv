@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Experience from './components/Experience';
-import Skills from './components/Skills';
-import Education from './components/Education';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import ErrorBoundary from './components/ErrorBoundary';
+import Header from './components/header/Header';
+import Hero from './components/hero/Hero';
+import About from './components/about/About';
+import Experience from './components/experience/Experience';
+import Skills from './components/skills/Skills';
+import Education from './components/education/Education';
+import Contact from './components/contact/Contact';
+import Footer from './components/footer/Footer';
+import ErrorBoundary from './components/errorboundary/ErrorBoundary';
 
 const App: React.FC = () => {
   return (

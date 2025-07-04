@@ -1,4 +1,5 @@
 import React from 'react';
+import './errorboundary.css';
 
 interface Props {
   children: React.ReactNode

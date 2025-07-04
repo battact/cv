@@ -1,0 +1,27 @@
+/* ErrorBoundary Component Styles */
+
+/* Error Boundary */
+.error-boundary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.error-content {
+  max-width: 500px;
+}
+
+.error-content h2 {
+  color: #e74c3c;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.error-content p {
+  margin-bottom: 30px;
+  color: #666;
+  line-height: 1.6;
+} 

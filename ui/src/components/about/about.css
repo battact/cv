@@ -1,0 +1,56 @@
+/* About Component Styles */
+
+/* About section specific styles */
+.about-text p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #475569;
+  line-height: 1.8;
+}
+
+.about-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15rem;
+  color: #334155;
+  letter-spacing: 0.01em;
+}
+
+/* Responsive design for About component */
+@media (max-width: 1024px) {
+  .about-content {
+    grid-area: content;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    grid-area: content;
+  }
+}
+
+@media (max-width: 480px) and (min-resolution: 2dppx) {
+  .about-text p {
+    font-size: 0.85rem;
+    text-align: center;
+    width: 100%;
+    padding: 0 1%;
+  }
+  
+  .about-content {
+    width: 100%;
+    padding: 0 1%;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-content {
+    grid-area: content !important;
+  }
+  
+  .about-content, .about-text p {
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    padding: 0 2% !important;
+  }
+} 

@@ -1,0 +1,272 @@
+/* Skills Component Styles */
+/* Note: Main skill icon styles are in App.css as shared styles */
+
+/* Skills section */
+.skills-icons-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2% 0;
+}
+
+.skill-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  justify-content: center;
+  aspect-ratio: 1;
+  min-height: 120px;
+  min-width: 120px;
+}
+
+.skill-icon-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.skill-icon {
+  width: 45%;
+  height: 45%;
+  min-width: 2.2rem;
+  min-height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.skill-icon-item:hover .skill-icon {
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%) scale(1.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4)) drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3));
+}
+
+.skill-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  line-height: 1.2;
+  transition: color 0.3s ease;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 90%;
+}
+
+.skill-emoji {
+  font-size: 65%;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4)) drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
+}
+
+.skill-icon svg {
+  width: 65%;
+  height: 65%;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4)) drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: white;
+  fill: white;
+}
+
+.skill-icon-item:hover .skill-icon svg {
+  transform: scale(0.85);
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5)) drop-shadow(0 2px 5px rgba(0, 0, 0, 0.4));
+}
+
+/* Responsive Styles */
+
+/* Large screens */
+@media (min-width: 1920px) {
+  .skill-icon {
+    width: 55%;
+    height: 55%;
+    min-width: 3.2rem;
+    min-height: 3.2rem;
+  }
+  
+  .skill-icon svg {
+    width: 75%;
+    height: 75%;
+  }
+  
+  .skill-emoji {
+    font-size: 75%;
+  }
+  
+  .skill-icon-item:hover .skill-icon {
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+  
+  .skill-icon-item:hover .skill-icon svg {
+    transform: scale(0.8);
+  }
+}
+
+@media (min-width: 2560px) {
+  .skill-icon {
+    width: 65%;
+    height: 65%;
+    min-width: 4.2rem;
+    min-height: 4.2rem;
+  }
+  
+  .skill-icon svg {
+    width: 80%;
+    height: 80%;
+  }
+  
+  .skill-emoji {
+    font-size: 80%;
+  }
+  
+  .skill-icon-item:hover .skill-icon {
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+  
+  .skill-icon-item:hover .skill-icon svg {
+    transform: scale(0.85);
+  }
+}
+
+@media (min-width: 2048px) and (max-width: 2559px) {
+  .skill-icon {
+    width: 60%;
+    height: 60%;
+    min-width: 3.8rem;
+    min-height: 3.8rem;
+  }
+  
+  .skill-icon svg {
+    width: 78%;
+    height: 78%;
+  }
+  
+  .skill-emoji {
+    font-size: 78%;
+  }
+  
+  .skill-icon-item:hover .skill-icon {
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+  
+  .skill-icon-item:hover .skill-icon svg {
+    transform: scale(0.82);
+  }
+}
+
+/* Tablet and mobile */
+@media (max-width: 1024px) {
+  .skills-icons-grid {
+    grid-area: content;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-icons-grid {
+    gap: 0.8%;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .skill-icon-item {
+    padding: 3%;
+    min-height: 100px;
+    min-width: 100px;
+  }
+  
+  .skill-icon {
+    width: 60%;
+    height: 60%;
+    min-width: 3rem;
+    min-height: 3rem;
+  }
+  
+  .skill-icon svg {
+    width: 85%;
+    height: 85%;
+  }
+  
+  .skill-name {
+    font-size: 0.7rem;
+  }
+  
+  .skill-icon-item:hover .skill-icon {
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+  
+  .skill-icon-item:hover .skill-icon svg {
+    transform: scale(0.8);
+  }
+}
+
+/* OnePlus 12 and similar high-DPI phones */
+@media (max-width: 480px) and (min-resolution: 2dppx) {
+  .skills-icons-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.3%;
+    width: 100%;
+  }
+  
+  .skill-icon-item {
+    padding: 0.1%;
+    min-height: 6px;
+    min-width: 6px;
+  }
+  
+  .skill-icon {
+    width: 25%;
+    height: 25%;
+    min-width: 0.5rem;
+    min-height: 0.5rem;
+  }
+  
+  .skill-name {
+    font-size: 0.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-icons-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1% !important;
+    grid-area: content !important;
+  }
+  
+  .skill-icon-item {
+    min-height: 20px !important;
+    min-width: 20px !important;
+    padding: 1% !important;
+  }
+  
+  .skill-icon {
+    width: 40% !important;
+    height: 40% !important;
+    min-width: 1.2rem !important;
+    min-height: 1.2rem !important;
+  }
+  
+  .skill-name {
+    font-size: 0.7rem !important;
+  }
+} 

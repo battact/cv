@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './contact.css';
 import { SiLinkedin, SiGithub } from 'react-icons/si';
 import { FaEnvelope, FaCopy, FaCheck } from 'react-icons/fa';
 

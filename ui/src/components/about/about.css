@@ -1,11 +1,22 @@
 /* About Component Styles */
 
 /* About section specific styles */
+.about-content {
+  container-type: inline-size;
+  container-name: about-content;
+  grid-area: content;
+  width: 100%;
+  padding: 0 2%;
+  text-align: center;
+}
+
 .about-text p {
   font-size: 1.1rem;
-  margin-bottom: 20px;
   color: #475569;
   line-height: 1.8;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1%;
 }
 
 .about-description {
@@ -15,42 +26,9 @@
   letter-spacing: 0.01em;
 }
 
-/* Responsive design for About component */
-@media (max-width: 1024px) {
-  .about-content {
-    grid-area: content;
-  }
-}
-
-@media (max-width: 768px) {
-  .about-content {
-    grid-area: content;
-  }
-}
-
-@media (max-width: 480px) and (min-resolution: 2dppx) {
+@container about-content (max-width: 480px) {
   .about-text p {
     font-size: 0.85rem;
-    text-align: center;
-    width: 100%;
-    padding: 0 1%;
-  }
-  
-  .about-content {
-    width: 100%;
-    padding: 0 1%;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-content {
-    grid-area: content !important;
-  }
-  
-  .about-content, .about-text p {
-    width: 100% !important;
-    text-align: center !important;
-    margin: 0 auto !important;
-    padding: 0 2% !important;
+    line-height: 1.3;
   }
 } 

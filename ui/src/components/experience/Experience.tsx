@@ -191,7 +191,7 @@ const Experience: React.FC = () => {
               )}
               
               <button 
-                className="btn-more"
+                className="details-button"
                 onClick={() => handleMoreClick(exp)}
               >
                 Details

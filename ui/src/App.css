@@ -103,8 +103,7 @@ html {
   line-height: 1.6;
 }
 
-.skills-icons-grid,
-.contact-content {
+.skills-icons-grid {
   grid-area: content;
 }
 

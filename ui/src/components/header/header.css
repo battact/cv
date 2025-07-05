@@ -161,6 +161,18 @@
 }
 
 @container header (max-width: 1024px) {
+    .header-content {
+        /* Prevent wrapping on narrow screens */
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .header-profile {
+        /* Allow profile to take available space */
+        flex: 1;
+        min-width: 0;
+    }
     .header-text .name {
         font-size: 2rem;
         line-height: 1.2;
@@ -194,5 +206,6 @@
         /* Ensure hamburger menu stays on the right */
         align-self: flex-start;
         margin-top: 4px; /* Slight vertical alignment with the name */
+        flex-shrink: 0;
     }
 }

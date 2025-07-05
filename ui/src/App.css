@@ -38,6 +38,9 @@ html {
 
 .main-content {
   padding-top: 80px;
+  container-type: inline-size;
+  container-name: main-content;
+  
 }
 
 /* Sections */
@@ -48,6 +51,7 @@ html {
   scroll-margin-top: 100px;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .section:first-child {
@@ -105,8 +109,8 @@ html {
 
 /* Skills grid area now handled in component-specific CSS */
 
-/* Responsive design */
-@media (max-width: 1024px) {
+/* Container Queries */
+@container main-content (max-width: 1024px) {
   /* Stack alternating layout on tablet */
   .section-content {
     grid-template-columns: 1fr;
@@ -122,7 +126,7 @@ html {
   }
 }
 
-@media (max-width: 768px) {
+@container main-content (max-width: 768px) {
   .section-header h2 {
     font-size: 2rem;
   }
@@ -142,94 +146,24 @@ html {
   .section-header h2::after {
     left: 50%;
     transform: translateX(-50%);
-    bottom: -20px;
+    bottom: -15px;
   }
 }
 
 /* OnePlus 12 and similar high-DPI phones */
-@media (max-width: 480px) and (min-resolution: 2dppx) {
-  .container {
-    padding: 0;
-    width: 100%;
-    max-width: 100%;
-  }
-  
-  .section {
-    width: 100%;
-  }
-  
-  .section-content {
-    grid-template-columns: 1fr;
-    grid-template-areas: "header" "content";
-    padding: 3% 1% 2% 1%;
-    gap: 2%;
-    width: 100%;
-  }
-  
-  .section-header {
-    text-align: center;
-    padding: 1% 0;
-    width: 100%;
-  }
-  
-  .section-header h2 {
-    font-size: 1.3rem;
-  }
-  
-  .section-header p {
-    font-size: 0.75rem;
-    text-align: center;
-    width: 100%;
-  }
-  
-
-}
-
-@media (max-width: 480px) {
-  body, .container, .section-content {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    box-sizing: border-box;
-  }
-  
-  /* Prevent horizontal scroll */
-  html, body {
-    overflow-x: hidden !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-  
+@container main-content (max-width: 480px) {
   .section-content {
     grid-template-columns: 1fr !important;
     grid-template-areas: "header" "content" !important;
+    padding: 3% 1% 2% 1%;
     gap: 2% !important;
   }
-  
-  .section-header {
-    grid-area: header !important;
-  }
-  
-  .section-header, .section-header h2, .section-header p {
-    width: 100% !important;
-    text-align: center !important;
-    margin: 0 auto !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-  
-  .section-header h2::after {
-    bottom: -25px !important;
-  }
-  
+
   .section-header h2 {
     font-size: 1.2rem !important;
   }
   
   .section-header p {
-    margin-top: 30px !important;
     font-size: 0.8rem !important;
   }
 }

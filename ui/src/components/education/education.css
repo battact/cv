@@ -50,10 +50,12 @@
 }
 
 /* OnePlus 12 and similar high-DPI phones */
-@container education (max-width: 480px) {
+@container education (max-width: 768px) {
     .education-item {
         padding: 2%;
-        width: 100%;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
     .education-meta {

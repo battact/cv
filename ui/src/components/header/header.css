@@ -140,8 +140,6 @@
 .mobile-nav-links {
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    gap: 15px;
 }
 
 .mobile-nav-links .nav-link {
@@ -165,14 +163,19 @@
 @container header (max-width: 768px) {
     .header-text .name {
         font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 4px;
     }
 
     .header-text .title {
         font-size: 1rem;
+        line-height: 1.2;
+        margin-bottom: 2px;
     }
 
     .header-text .subtitle {
         font-size: 0.75rem;
+        line-height: 1.2;
     }
 
     .header-nav {
@@ -188,5 +191,8 @@
         background: transparent;
         border: none;
         outline: none;
+        /* Ensure hamburger menu stays on the right */
+        align-self: flex-start;
+        margin-top: 4px; /* Slight vertical alignment with the name */
     }
 }

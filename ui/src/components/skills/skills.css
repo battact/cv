@@ -2,14 +2,18 @@
 /* Note: Main skill icon styles are in App.css as shared styles */
 
 /* Container query support */
+.skills-icons-container {
+    max-width: 100%;
+    container-type: inline-size;
+    container-name: skills;
+    grid-area: content;
+}
+
 .skills-icons-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1%;
     max-width: 100%;
-    container-type: inline-size;
-    container-name: skills;
-    grid-area: content;
 }
 
 .skill-icon-item {
@@ -89,7 +93,13 @@
 }
 
 @container skills (max-width: 1024px) {
+    .skills-icons-grid {
+        margin-left: 5%;
+        margin-right: 5%;
+        max-width: 90%;
+    }
+
     .skill-name {
-        font-size: 0.65rem;
+        font-size: 0.6rem;
     }
 }

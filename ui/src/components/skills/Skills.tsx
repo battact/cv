@@ -74,21 +74,23 @@ const Skills: React.FC = () => {
                     <h2>Skills & Technologies</h2>
                     <p>Comprehensive expertise in modern development technologies and methodologies</p>
                 </div>
-                <div className="skills-icons-grid">
-                    {skills.map((skill, index) => (
-                        <div
-                            key={index}
-                            className={`skill-icon-item scale-in ${isIntersecting ? 'visible' : ''}`}
-                            style={
-                                {
-                                    animationDelay: `${index * 0.1}s`,
-                                } as React.CSSProperties
-                            }
-                        >
-                            <div className="skill-icon">{skill.icon}</div>
-                            <span className="skill-name">{skill.name}</span>
-                        </div>
-                    ))}
+                <div className="skills-icons-container">
+                    <div className="skills-icons-grid">
+                        {skills.map((skill, index) => (
+                            <div
+                                key={index}
+                                className={`skill-icon-item scale-in ${isIntersecting ? 'visible' : ''}`}
+                                style={
+                                    {
+                                        animationDelay: `${index * 0.1}s`,
+                                    } as React.CSSProperties
+                                }
+                            >
+                                <div className="skill-icon">{skill.icon}</div>
+                                <span className="skill-name">{skill.name}</span>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

@@ -50,10 +50,13 @@ jobs:
       - name: Build UI application
         run: pnpm build
 
+      - name: Generate PDF from built application
+        run: pnpm generate-pdf
+
       - name: Run infrastructure tests
         run: pnpm --filter infra test
 
-      - name: Upload UI build artifacts
+      - name: Upload UI build artifacts (with PDF)
         uses: actions/upload-artifact@v4
         with:
           name: build-files

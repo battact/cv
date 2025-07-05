@@ -2,33 +2,33 @@
 
 /* About section specific styles */
 .about-content {
-  container-type: inline-size;
-  container-name: about-content;
-  grid-area: content;
-  width: 100%;
-  padding: 0 2%;
-  text-align: center;
+    container-type: inline-size;
+    container-name: about-content;
+    grid-area: content;
+    width: 100%;
+    padding: 0 2%;
+    text-align: center;
 }
 
 .about-text p {
-  font-size: 1.1rem;
-  color: #475569;
-  line-height: 1.8;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 1%;
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.8;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1%;
 }
 
 .about-description {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.15rem;
-  color: #334155;
-  letter-spacing: 0.01em;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.15rem;
+    color: #334155;
+    letter-spacing: 0.01em;
 }
 
 @container about-content (max-width: 480px) {
-  .about-text p {
-    font-size: 0.85rem;
-    line-height: 1.3;
-  }
-} 
+    .about-text p {
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+}

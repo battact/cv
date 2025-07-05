@@ -1,347 +1,348 @@
-/* Experience Component Styles */ 
+/* Experience Component Styles */
 
 /* Experience Section Styles */
 .experience-list {
-  container-type: inline-size;
-  container-name: experience-list;
-  max-width: 100%;
-
+    container-type: inline-size;
+    container-name: experience-list;
+    max-width: 100%;
 }
 
 .experience-item-collapsed {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  border-left: 4px solid #667eea;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #667eea;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .experience-item-collapsed:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .experience-item-collapsed .experience-header {
-  flex: 1;
-  min-width: 300px;
+    flex: 1;
+    min-width: 300px;
 }
 
 .job-technologies-preview {
-  flex: 1;
+    flex: 1;
 }
 
 .details-button {
-  font-family: 'Playfair Display', serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: 500;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .details-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
 }
 
 /* Container queries for responsive design */
 @container experience-list (max-width: 768px) {
-  .experience-item-collapsed {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
-  
-  .details-button {
-    align-self: flex-end;
-  }
+    .experience-item-collapsed {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .details-button {
+        align-self: flex-end;
+    }
 }
 
 .modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-  backdrop-filter: blur(5px);
-  container-type: inline-size;
-  container-name: modal-overlay;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(5px);
+    container-type: inline-size;
+    container-name: modal-overlay;
 }
 
 .modal-content {
-  background: white;
-  border-radius: 16px;
-  width: 100%;
-  max-height: 90vh;
-  overflow-y: auto;
-  position: relative;
-  max-width: 40%;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  animation: modalSlideIn 0.3s ease-out;
+    background: white;
+    border-radius: 16px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    max-width: 40%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalSlideIn 0.3s ease-out;
 }
 
 @keyframes modalSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-50px) scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .modal-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding-bottom: 20px;
-  background: none;
-  border: none;
-  font-size: 2rem;
-  color: #64748b;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  z-index: 10;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding-bottom: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #64748b;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
 }
 
 .modal-close:hover {
-  background: #f1f5f9;
-  color: #1e293b;
+    background: #f1f5f9;
+    color: #1e293b;
 }
 
 .modal-header {
-  padding: 40px 40px 20px 40px;
-  border-bottom: 1px solid #e2e8f0;
+    padding: 40px 40px 20px 40px;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .modal-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #1e293b;
-  margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 15px;
 }
 
 .modal-meta {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .modal-company {
-  font-weight: 600;
-  color: #667eea;
-  font-size: 1.2rem;
+    font-weight: 600;
+    color: #667eea;
+    font-size: 1.2rem;
 }
 
 .modal-period {
-  color: #64748b;
-  font-size: 0.9rem;
+    color: #64748b;
+    font-size: 0.9rem;
 }
 
 .modal-section {
-  padding: 25px 40px;
-  border-bottom: 1px solid #f1f5f9;
+    padding: 25px 40px;
+    border-bottom: 1px solid #f1f5f9;
 }
 
 .modal-section:last-child {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 .modal-section h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #1e293b;
-  margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 15px;
 }
 
 @container modal-overlay (max-width: 768px) {
-  .modal-content {
-    max-width: 80%;
-    margin: 10px;
-  }
-  
-  .modal-header {
-    padding: 30px 25px 15px 25px;
-  }
-  
-  .modal-section {
-    padding: 20px 25px;
-  }
-  
-  .modal-title {
-    font-size: 1.6rem;
-  }
+    .modal-content {
+        max-width: 80%;
+        margin: 10px;
+    }
+
+    .modal-header {
+        padding: 30px 25px 15px 25px;
+    }
+
+    .modal-section {
+        padding: 20px 25px;
+    }
+
+    .modal-title {
+        font-size: 1.6rem;
+    }
 }
 
 @container modal-overlay (max-width: 430px) {
-  .modal-content {
-    max-width: 90%;
-  }
+    .modal-content {
+        max-width: 90%;
+    }
 
-  .modal-header {
-    padding: 25px 20px 15px 20px;
-  }
-  
-  .modal-section {
-    padding: 15px 20px;
-  }
-  
-  .modal-title {
-    font-size: 1.4rem;
-  }
-  
-  .modal-close {
-    top: 15px;
-    right: 15px;
-    font-size: 1.5rem;
-    width: 35px;
-    height: 35px;
-  }
+    .modal-header {
+        padding: 25px 20px 15px 20px;
+    }
+
+    .modal-section {
+        padding: 15px 20px;
+    }
+
+    .modal-title {
+        font-size: 1.4rem;
+    }
+
+    .modal-close {
+        top: 15px;
+        right: 15px;
+        font-size: 1.5rem;
+        width: 35px;
+        height: 35px;
+    }
 }
 
 .job-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #1e293b;
-  margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 10px;
 }
 
 .job-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .company {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  color: #667eea;
-  font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #667eea;
+    font-size: 1.1rem;
 }
 
 .period {
-  font-family: 'Poppins', sans-serif;
-  color: #64748b;
-  font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: #64748b;
+    font-size: 1rem;
 }
 
 .job-technologies {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .job-technologies h4 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #1e293b;
-  margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 10px;
 }
 
 .tech-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .tech-tag {
-  background: linear-gradient(135deg, #84cc16 0%, #65a30d 100%);
-  color: white;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
+    background: linear-gradient(135deg, #84cc16 0%, #65a30d 100%);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 .tech-tag:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(132, 204, 22, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(132, 204, 22, 0.3);
 }
 
 .job-achievements {
-  margin-bottom: 25px;
+    margin-bottom: 25px;
 }
 
 .job-achievements h4 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #1e293b;
-  margin-bottom: 12px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 12px;
 }
 
 .achievements-list {
-  list-style: none;
-  padding-left: 0;
+    list-style: none;
+    padding-left: 0;
 }
 
 .achievement-item {
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  color: #1e293b;
-  font-weight: 500;
-  line-height: 1.6;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    color: #1e293b;
+    font-weight: 500;
+    line-height: 1.6;
 }
 
 .achievement-icon {
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2rem;
 }
 
 .job-responsibilities h4 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #1e293b;
-  margin-bottom: 12px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 12px;
 }
 
 .job-description {
-  list-style: none;
+    list-style: none;
 }
 
 .job-description li {
-  position: relative;
-  padding-left: 25px;
-  margin-bottom: 10px;
-  color: #475569;
-  line-height: 1.6;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    color: #475569;
+    line-height: 1.6;
 }
 
 .job-description li::before {
-  content: '▸';
-  position: absolute;
-  left: 0;
-  color: #667eea;
-  font-weight: bold;
-} 
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+}

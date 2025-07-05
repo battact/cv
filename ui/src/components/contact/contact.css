@@ -2,122 +2,122 @@
 
 /* Container query support */
 .contact-content {
-  max-width: 100%;
-  text-align: center;
-  container-type: inline-size;
-  container-name: contact;
+    max-width: 100%;
+    text-align: center;
+    container-type: inline-size;
+    container-name: contact;
 }
 
 .contact-info {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  justify-items: center;
-  align-items: center;
-  margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 20px;
 }
 
 .contact-item {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-  max-width: 100%;
-  width: 100%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    max-width: 100%;
+    width: 100%;
 }
 
 .contact-item:hover {
-  transform: translateY(-3px);
+    transform: translateY(-3px);
 }
 
 .contact-item h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #1e293b;
-  margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 15px;
 }
 
 .contact-email {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
 }
 
 .email-address {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #667eea;
-  padding: 12px 20px;
-  background: linear-gradient(135deg, #667eea10, #764ba210);
-  border-radius: 8px;
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #667eea;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #667eea10, #764ba210);
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
 }
 
 .contact-item:hover .email-address {
-  border-color: #667eea;
-  background: linear-gradient(135deg, #667eea15, #764ba215);
+    border-color: #667eea;
+    background: linear-gradient(135deg, #667eea15, #764ba215);
 }
 
 .copy-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border: none;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
 }
 
 .copy-button svg {
-  width: 1.2rem;
-  height: 1.2rem;
+    width: 1.2rem;
+    height: 1.2rem;
 }
 
 .copy-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(102, 126, 234, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(102, 126, 234, 0.3);
 }
 
 .copy-button:active {
-  transform: translateY(0);
+    transform: translateY(0);
 }
 
 .contact-links {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
 }
 
 .contact-icon-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.3rem;
 }
 
 .contact-icon-link:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
-  color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+    color: white;
 }
 
 @container contact (max-width: 768px) {
-  .contact-info {
-    grid-template-columns: 1fr;
-  }
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
 }

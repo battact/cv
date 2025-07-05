@@ -102,6 +102,7 @@ pnpm deploy
 - ✅ **Type-safe** - Full TypeScript coverage
 - ✅ **Modern tooling** - pnpm workspaces, ESLint, Prettier
 - ✅ **AWS infrastructure** - Scalable, secure deployment
+- ✅ **Automated PDF generation** - Always up-to-date PDF version
 
 ## Architecture
 
@@ -158,6 +159,69 @@ pnpm build        # Build CDK constructs
 pnpm test         # Run infrastructure tests
 pnpm cdk deploy   # Deploy infrastructure
 ```
+
+## PDF Generation
+
+The CV website automatically generates an up-to-date PDF version that always reflects the current web content.
+
+### How It Works
+
+The PDF generation uses **Puppeteer** to render the built website and create a professional PDF with:
+
+- Print-optimized layout and styling
+- Proper page breaks
+- All content from the web version
+- Professional formatting
+
+### Automatic Generation
+
+The PDF is automatically generated:
+
+- ✅ **During CI/CD** - Every deployment creates a fresh PDF
+- ✅ **On build** - Generated after each production build
+- ✅ **Always current** - Reflects latest content changes
+
+### Manual Generation
+
+```bash
+# Generate PDF locally (requires built application)
+pnpm build:with-pdf     # Build and generate PDF
+pnpm generate-pdf       # Generate PDF from existing build
+
+# UI package only
+cd ui
+pnpm build              # Build first
+pnpm generate-pdf       # Then generate PDF
+```
+
+### Print-Friendly Version
+
+The website is also optimized for browser printing:
+
+- Use **Ctrl+P** (or Cmd+P) to print directly from browser
+- Print styles automatically optimize layout
+- Hidden elements: navigation, hero image, interactive buttons
+- Optimized spacing and typography
+
+### PDF Features
+
+The generated PDF includes:
+
+- ✅ **Professional header** with contact information
+- ✅ **Complete experience** with technologies and achievements
+- ✅ **Skills grid** with all technical competencies
+- ✅ **Education history** with institutions and dates
+- ✅ **Contact details** with email and links
+- ✅ **Print-optimized layout** with proper page breaks
+- ✅ **A4 format** with professional margins
+
+### Customization
+
+To modify PDF output:
+
+- **Print styles**: Edit `ui/src/print.css`
+- **PDF generation**: Modify `ui/scripts/generate-pdf.js`
+- **Layout**: Adjust print media queries in component CSS
 
 ## Deployment
 

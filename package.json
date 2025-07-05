@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "pnpm --filter ui dev",
     "build": "pnpm --filter ui build",
+    "build:with-pdf": "pnpm build && pnpm generate-pdf",
+    "generate-pdf": "pnpm --filter ui generate-pdf",
     "lint": "pnpm --filter ui lint",
     "preview": "pnpm --filter ui preview",
     "deploy": "pnpm --filter ui deploy",

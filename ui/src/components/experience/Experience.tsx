@@ -86,13 +86,13 @@ const Experience: React.FC = () => {
       description: [
         "Designed and architected event-driven microservices using AWS services (Lambda, SQS, SNS, DynamoDB, RDS) and Apache Kafka with Python and Node.js",
         "Led cross-team communication and coordination for microservices integration and deployment",
-        "Implemented CI/CD pipelines using GitLab for automated deployments and microservices orchestration",
+        "Implemented CI/CD pipelines using GitLab for automated deployment and microservices orchestration",
         "Pioneered AWS CDK (Infrastructure as Code) adoption for the team, standardizing infrastructure deployment and management",
         "Conducted technical design reviews and mentored team members on AWS best practices and microservices patterns",
-        "Responsible for converting business requirements into detailed Jira tickets and designing technical architectures for new features"
+        "Convert business requirements into detailed Jira tickets and design technical architectures for new features"
       ],
       achievements: [
-        "Led and maintain 30+ microservices across production environment",
+        "Lead and maintain 30+ microservices across production environment",
         "Implemented new license management tool achieving 4x faster processing speed and 40% reduction in bugs",
         "Optimized asset delivery workflow: reduced processing time from 1500 seconds to 150 seconds for 1000 assets (90% improvement)",
         "Reduced infrastructure costs by 50% through workflow optimization",

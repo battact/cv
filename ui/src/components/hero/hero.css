@@ -1,6 +1,6 @@
 /* Hero Component Styles */
 
-/* Hero Section */
+/* Container query support */
 .hero-section {
   position: relative;
   height: 100vh;
@@ -8,6 +8,8 @@
   align-items: center;
   justify-content: flex-start;
   overflow: hidden;
+  container-type: inline-size;
+  container-name: hero;
 }
 
 .hero-background {
@@ -102,9 +104,9 @@
   transform: translateY(-2px);
 }
 
-/* Responsive Styles */
+/* Container Queries */
 
-@media (max-width: 768px) {
+@container hero (max-width: 768px) {
   .hero-content {
     margin-left: 0;
     margin-top: 300px;
@@ -128,16 +130,22 @@
   .btn {
     padding: 0.8% 1.6%;
     font-size: 0.85rem;
-  }
-  
-  .btn {
     width: 100%;
     max-width: 80%;
   }
 }
 
 /* OnePlus 12 and similar high-DPI phones */
-@media (max-width: 480px) and (min-resolution: 2dppx) {
+@container hero (max-width: 480px) {
+  .hero-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box;
+  }
+  
   .hero-content {
     text-align: center;
     padding: 0 1%;
@@ -150,24 +158,6 @@
   
   .hero-subtitle {
     font-size: 0.8rem;
-  }
-  
-  .btn {
-    width: 70%;
-    max-width: 150px;
-    padding: 0.5% 0.8%;
-    font-size: 0.6rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-section {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    box-sizing: border-box;
   }
   
   .btn {

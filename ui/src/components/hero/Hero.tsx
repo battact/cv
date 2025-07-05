@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
       </div>
       <div className="hero-content">
         <div className="hero-text">
-          <h1 className="hero-title">Tamas Bartos</h1>
+          <h1 className="hero-title">Tamás Bartos</h1>
           <p className="hero-subtitle">Software Engineer & Cloud Architect</p>
         </div>
       </div>

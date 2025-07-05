@@ -1,9 +1,11 @@
 /* Education Component Styles */
 
-/* Education section */
+/* Container query support */
 .education-list {
   max-width: 100%;
-  margin: 0 auto;
+  container-type: inline-size;
+  container-name: education;
+  grid-area: content;
 }
 
 .education-item {
@@ -29,13 +31,11 @@
   font-size: 1.4rem;
   font-weight: 600;
   color: #1e293b;
-  margin-bottom: 10px;
 }
 
 .education-meta {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
 }
 
 .institution {
@@ -49,23 +49,8 @@
   line-height: 1.6;
 }
 
-/* Responsive Styles */
-
-/* Tablet and mobile */
-@media (max-width: 1024px) {
-  .education-list {
-    grid-area: content;
-  }
-}
-
-@media (max-width: 768px) {
-  .education-list {
-    grid-area: content;
-  }
-}
-
 /* OnePlus 12 and similar high-DPI phones */
-@media (max-width: 480px) and (min-resolution: 2dppx) {
+@container education (max-width: 480px) {
   .education-item {
     padding: 2%;
     width: 100%;
@@ -74,11 +59,5 @@
   .education-meta {
     flex-direction: column;
     gap: 0.3%;
-  }
-}
-
-@media (max-width: 480px) {
-  .education-list {
-    grid-area: content !important;
   }
 } 

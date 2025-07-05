@@ -104,7 +104,6 @@ html {
 }
 
 .skills-icons-grid,
-.education-list,
 .contact-content {
   grid-area: content;
 }

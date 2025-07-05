@@ -88,11 +88,11 @@
 .modal-content {
   background: white;
   border-radius: 16px;
-  max-width: 40%;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
+  max-width: 40%;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   animation: modalSlideIn 0.3s ease-out;
 }
@@ -197,7 +197,7 @@
   }
 }
 
-@container modal-overlay (max-width: 480px) {
+@container modal-overlay (max-width: 430px) {
   .modal-content {
     max-width: 90%;
   }

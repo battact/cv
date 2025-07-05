@@ -117,7 +117,7 @@
     color: white;
 }
 
-@container contact (max-width: 768px) {
+@container contact (max-width: 1024px) {
     .contact-item {
         margin-left: 5%;
         margin-right: 5%;

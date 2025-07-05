@@ -160,7 +160,7 @@
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-@container header (max-width: 768px) {
+@container header (max-width: 1024px) {
     .header-text .name {
         font-size: 2rem;
         line-height: 1.2;

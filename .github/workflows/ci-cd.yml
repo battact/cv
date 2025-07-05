@@ -50,8 +50,8 @@ jobs:
       - name: Build UI application
         run: pnpm build
 
-      - name: Generate PDF from built application
-        run: pnpm generate-pdf
+      #- name: Generate PDF from built application
+      #  run: pnpm generate-pdf
 
       - name: Run infrastructure tests
         run: pnpm --filter infra test

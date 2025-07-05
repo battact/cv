@@ -103,9 +103,7 @@ html {
   line-height: 1.6;
 }
 
-.skills-icons-grid {
-  grid-area: content;
-}
+/* Skills grid area now handled in component-specific CSS */
 
 /* Responsive design */
 @media (max-width: 1024px) {

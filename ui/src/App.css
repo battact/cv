@@ -131,6 +131,18 @@ html {
     }
 }
 
+/* Ensure section header is centered at medium screen sizes */
+@container main-content (max-width: 900px) {
+    .section-header {
+        text-align: center;
+    }
+
+    .section-header h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
 @container main-content (max-width: 768px) {
     .section-header h2 {
         font-size: 2rem;

@@ -117,13 +117,18 @@
     color: white;
 }
 
-@container contact (max-width: 1024px) {
+@container contact (max-width: 720px) {
     .contact-item {
         margin-left: 5%;
         margin-right: 5%;
         max-width: 90%;
     }
+
     .contact-info {
         grid-template-columns: 1fr;
+    }
+
+    .email-address {
+        font-size: 0.9rem;
     }
 }

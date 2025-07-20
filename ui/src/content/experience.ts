@@ -98,9 +98,7 @@ export const experienceContent = {
                 'Designed scalable architecture for agricultural IoT systems using AWS cloud services and modern web technologies',
             ],
             achievements: [
-                'Developed 2 production applications: employee management system and intelligent plant monitoring system',
                 'Implemented complex data processing algorithms for automated plant watering decisions with 95% accuracy',
-                'Led and mentored 2 junior developers while coordinating outsourced senior developer across projects',
                 'Improved agricultural system efficiency by 35% through IoT integration and automated processes',
             ],
         },

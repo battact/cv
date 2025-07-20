@@ -1,28 +1,38 @@
-/* CV Page - Basic Structure */
-.cv-page {
-    max-width: 210mm;
-    margin: 0 auto;
-    background: white;
-    color: #333;
-    padding: 20px;
-    min-height: 297mm;
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* CSS Custom Properties */
+:root {
+    --primary-color: #1a3c63;
+    --background-light: #f9f7f4;
+    --text-dark: #333;
+    --text-medium: #555;
+    --text-light: #777;
+    --white: white;
+    --font-family: 'Inter', sans-serif;
 }
 
-.cv-content {
-    padding-top: 20px;
+/* CV Page - Basic Structure */
+.cv-page {
+    font-family: var(--font-family);
+    max-width: 200mm;
+    margin: 0 auto;
+    background: var(--white);
+    color: var(--text-dark);
+    padding: 20px;
+    min-height: 100vh;
 }
 
 /* CV Top Header */
 .cv-top-header {
-    background: #1f4e79;
-    color: white;
+    background: var(--primary-color);
+    color: var(--white);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    margin: -20px -20px 30px -20px;
+    margin: -20px -20px 0 -20px;
     height: 8vh;
-    min-height: 60px;
 }
 
 .header-section {
@@ -35,17 +45,15 @@
 
 .header-icon {
     font-size: 24px;
-    margin-bottom: 2px;
 }
 
 .header-text {
     font-size: 14px;
     font-weight: 500;
-    line-height: 1.2;
 }
 
 .header-link {
-    color: white;
+    color: var(--white);
     text-decoration: none;
     transition: opacity 0.3s ease;
 }
@@ -55,13 +63,265 @@
     text-decoration: underline;
 }
 
+/* Spacer Line */
+.spacer-line {
+    background: var(--background-light);
+    height: 2vh;
+    width: calc(100% + 40px);
+    margin: 0 0 0 -20px;
+}
+
+/* Two-column layout */
+.cv-two-column {
+    display: flex;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    min-height: calc(100vh - 10vh);
+}
+
+.cv-left-column {
+    width: 43%;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 20px;
+}
+
+/* Profile Picture */
+.profile-picture-container {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.profile-picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--white);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Profile Name */
+.profile-name {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 2px;
+    margin-top: 15px;
+}
+
+/* Summary Section */
+.summary-section {
+    margin-top: 15px;
+    padding: 0 10px;
+}
+
+.summary-header {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.summary-text {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0;
+}
+
+/* Skills Section */
+.skills-section {
+    margin-top: 25px;
+    padding: 0 10px;
+}
+
+.skills-header {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.skill-category {
+    margin-bottom: 15px;
+}
+
+.skill-category-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 1px;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.skill-item {
+    font-size: 10px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--white);
+    padding: 4px 8px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Strengths Section */
+.strengths-section {
+    margin-top: 25px;
+    padding: 0 10px;
+}
+
+.strengths-header {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.strengths-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.strength-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.strength-icon {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    width: 20px;
+    text-align: center;
+}
+
+/* CV Education Section */
+.cv-education-section {
+    margin-top: 25px;
+    padding: 0 10px;
+}
+
+.cv-education-header {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.cv-education-item {
+    margin-bottom: 15px;
+}
+
+.cv-education-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--white);
+    margin: 0 0 3px 0;
+    line-height: 1.3;
+}
+
+.cv-education-institution {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 2px 0;
+    line-height: 1.3;
+}
+
+.cv-education-period {
+    font-size: 10px;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+.cv-right-column {
+    width: 57%;
+    background: var(--background-light);
+    color: var(--text-dark);
+    padding: 20px;
+}
+
+.experience-header {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    text-align: left;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 8px;
+}
+
+.experience-item {
+    margin-bottom: 25px;
+    page-break-inside: avoid;
+}
+
+.experience-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0 0 5px 0;
+}
+
+.experience-company {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-medium);
+    margin: 0 0 3px 0;
+}
+
+.experience-period {
+    font-size: 12px;
+    font-style: italic;
+    color: var(--text-light);
+    margin: 0 0 10px 0;
+}
+
+.experience-tasks {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.experience-tasks li {
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+}
+
 /* Header with Buttons */
 .cv-header {
     position: fixed;
     top: 10px;
     right: 10px;
     z-index: 1000;
-    background: white;
+    background: var(--white);
     padding: 15px;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -87,7 +347,7 @@
 
 .download-pdf-btn {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    color: var(--white);
 }
 
 .download-pdf-btn:hover {
@@ -110,40 +370,48 @@
 }
 
 .web-view-btn {
-    background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%);
-    color: white;
+    background: #27ae60;
+    color: var(--white);
 }
 
 .web-view-btn:hover {
+    background: #229954;
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(86, 171, 47, 0.4);
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
 }
 
 /* Print styles for PDF generation */
 @media print {
-    /* Remove browser default headers and footers */
     @page {
         margin: 0;
         size: A4;
     }
 
+    /* Style for the margin divs */
+    .cv-margin-left {
+        display: block !important;
+        width: 100% !important;
+        height: 30px !important;
+    }
+
+    .cv-margin-right {
+        display: block !important;
+        width: 100% !important;
+        height: 30px !important;
+    }
+
     .cv-page {
         margin: 0;
-        padding: 20mm;
+        padding: 15mm;
         max-width: none;
         min-height: auto;
     }
 
-    .cv-header {
-        display: none !important;
-    }
-
-    /* CV Top Header in print */
     .cv-top-header {
-        background: #1f4e79 !important;
-        color: white !important;
-        margin: -20mm -20mm 15mm -20mm;
-        height: 20mm; /* About 2-3% of A4 page height */
+        background: var(--primary-color) !important;
+        color: var(--white) !important;
+        margin: -15mm -15mm 0 -15mm;
+        height: 20mm;
         padding: 8mm 15mm;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
@@ -168,7 +436,242 @@
     }
 
     .header-link {
-        color: white !important;
+        color: var(--white) !important;
         text-decoration: none !important;
+    }
+
+    .spacer-line {
+        background: var(--background-light) !important;
+        height: 3mm !important;
+        width: calc(100% + 30mm) !important;
+        margin: 0 0 0 -15mm !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .cv-two-column {
+        display: flex !important;
+        width: calc(100% + 30mm) !important;
+        margin-left: -15mm !important;
+        min-height: 555mm !important;
+    }
+
+    .cv-left-column {
+        width: 43% !important;
+        background: var(--primary-color) !important;
+        color: var(--white) !important;
+        padding: 8mm !important;
+        min-height: 555mm !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .cv-right-column {
+        width: 57% !important;
+        background: var(--background-light) !important;
+        color: var(--text-dark) !important;
+        padding: 8mm !important;
+        min-height: 555mm !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .skill-category {
+        page-break-inside: avoid !important;
+        margin-bottom: 6mm !important;
+    }
+
+    .experience-item {
+        page-break-inside: avoid !important;
+        margin-bottom: 12mm !important;
+    }
+
+    .experience-item:first-child {
+        margin-top: 0 !important;
+    }
+
+    .skill-category:nth-last-child(-n + 2) {
+        page-break-after: avoid !important;
+    }
+
+    .profile-picture-container {
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .profile-picture {
+        width: 60mm !important;
+        height: 60mm !important;
+        border-radius: 50% !important;
+        object-fit: cover !important;
+        border: 2mm solid var(--white) !important;
+        box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .profile-name {
+        text-align: center !important;
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        color: var(--white) !important;
+        letter-spacing: 1.5px !important;
+        margin-top: 8mm !important;
+    }
+
+    .summary-section,
+    .skills-section,
+    .strengths-section,
+    .cv-education-section {
+        padding: 0 3mm !important;
+    }
+
+    .summary-section {
+        margin-top: 4mm !important;
+    }
+
+    .skills-section,
+    .strengths-section,
+    .cv-education-section {
+        margin-top: 12mm !important;
+    }
+
+    .summary-header,
+    .skills-header,
+    .strengths-header,
+    .cv-education-header {
+        font-size: 12px !important;
+        font-weight: 700 !important;
+        color: var(--white) !important;
+        letter-spacing: 1.2px !important;
+        margin-bottom: 3mm !important;
+        text-align: left !important;
+    }
+
+    .summary-text {
+        font-size: 10px !important;
+        font-weight: 400 !important;
+        color: var(--white) !important;
+        line-height: 1.5 !important;
+        text-align: justify !important;
+        margin: 0 !important;
+    }
+
+    .skill-category-title {
+        font-size: 9px !important;
+        font-weight: 600 !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+        letter-spacing: 0.8px !important;
+        margin: 0 0 2mm 0 !important;
+        text-transform: uppercase !important;
+    }
+
+    .skills-list {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 3mm !important;
+    }
+
+    .skill-item {
+        font-size: 9px !important;
+        font-weight: 500 !important;
+        background: rgba(255, 255, 255, 0.15) !important;
+        color: var(--white) !important;
+        padding: 2mm 4mm !important;
+        border-radius: 6mm !important;
+        border: 0.5mm solid rgba(255, 255, 255, 0.3) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .strengths-list {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 4mm !important;
+    }
+
+    .strength-item {
+        display: flex !important;
+        align-items: center !important;
+        gap: 4mm !important;
+        font-size: 10px !important;
+        font-weight: 500 !important;
+        color: var(--white) !important;
+    }
+
+    .strength-icon {
+        font-size: 12px !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        width: 6mm !important;
+        text-align: center !important;
+    }
+
+    .cv-education-item {
+        margin-bottom: 6mm !important;
+    }
+
+    .cv-education-title {
+        font-size: 10px !important;
+        font-weight: 600 !important;
+        color: var(--white) !important;
+        margin: 0 0 1mm 0 !important;
+        line-height: 1.3 !important;
+    }
+
+    .cv-education-institution {
+        font-size: 9px !important;
+        font-weight: 500 !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        margin: 0 0 1mm 0 !important;
+        line-height: 1.3 !important;
+    }
+
+    .cv-education-period {
+        font-size: 8px !important;
+        font-style: italic !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+        margin: 0 !important;
+    }
+
+    .experience-header {
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        color: var(--primary-color) !important;
+        letter-spacing: 1.2px !important;
+        margin-bottom: 8mm !important;
+        text-align: left !important;
+        border-bottom: 1mm solid var(--primary-color) !important;
+        padding-bottom: 3mm !important;
+    }
+
+    .experience-title {
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        color: var(--primary-color) !important;
+        margin: 0 0 2mm 0 !important;
+    }
+
+    .experience-company {
+        font-size: 12px !important;
+        font-weight: 600 !important;
+        color: var(--text-medium) !important;
+        margin: 0 0 1mm 0 !important;
+    }
+
+    .experience-period {
+        font-size: 10px !important;
+        font-style: italic !important;
+        color: var(--text-light) !important;
+        margin: 0 0 4mm 0 !important;
+    }
+
+    .experience-tasks {
+        margin: 0 !important;
+        padding-left: 6mm !important;
+    }
+
+    .experience-tasks li {
+        font-size: 10px !important;
+        line-height: 1.4 !important;
+        color: var(--text-dark) !important;
+        margin-bottom: 2mm !important;
     }
 }

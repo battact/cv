@@ -6,26 +6,33 @@ export interface SkillItem {
 export const skillsContent = {
     skills: [
         // Programming Languages & Runtime (ordered by experience)
-        { name: 'Node.js', category: 'Backend' },
+        { name: 'Node.js', category: 'Language' },
         { name: 'JavaScript', category: 'Language' },
         { name: 'TypeScript', category: 'Language' },
         { name: 'Python', category: 'Language' },
 
         // Frontend
-        { name: 'GraphQL', category: 'Backend' },
+        { name: 'GraphQL', category: 'Frontend' },
         { name: 'React', category: 'Frontend' },
-        { name: 'HTML5', category: 'Frontend' },
-        { name: 'CSS3', category: 'Frontend' },
 
         // Cloud & AWS Services
         { name: 'AWS', category: 'Cloud' },
         { name: 'CDK', category: 'Cloud' },
-        { name: 'DynamoDB', category: 'Cloud' },
+        { name: 'SNS', category: 'Cloud' },
+        { name: 'SQS', category: 'Cloud' },
+        { name: 'S3', category: 'Cloud' },
+        { name: 'Lambda', category: 'Cloud' },
+        { name: 'ECS', category: 'Cloud' },
+        { name: 'EKS', category: 'Cloud' },
+        { name: 'RDS', category: 'Cloud' },
+
+        // Database
         { name: 'PostgreSQL', category: 'Database' },
+        { name: 'DynamoDB', category: 'Database' },
         { name: 'MongoDB', category: 'Database' },
 
         // Architecture & Infrastructure
-        { name: 'Apache Kafka', category: 'Architecture' },
+        { name: 'Apache Kafka', category: 'Infrastructure' },
         { name: 'Docker', category: 'Infrastructure' },
         { name: 'GitLab CI/CD', category: 'Infrastructure' },
 

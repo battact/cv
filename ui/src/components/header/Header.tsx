@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './header.css';
 
@@ -7,6 +7,19 @@ const getInTouchButtonName = 'Get in Touch';
 
 const Header: React.FC = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    // Hook to detect mobile/tablet devices
+    useEffect(() => {
+        const checkIsMobile = () => {
+            setIsMobile(window.innerWidth <= 1024); // Includes tablets
+        };
+
+        checkIsMobile();
+        window.addEventListener('resize', checkIsMobile);
+
+        return () => window.removeEventListener('resize', checkIsMobile);
+    }, []);
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -14,6 +27,24 @@ const Header: React.FC = () => {
 
     const closeMobileMenu = () => {
         setIsMobileMenuOpen(false);
+    };
+
+    const handleCVButtonClick = (e: React.MouseEvent) => {
+        if (isMobile) {
+            e.preventDefault();
+            // Download PDF directly on mobile/tablet
+            const link = document.createElement('a');
+            link.href = '/tamas_bartos_cv.pdf';
+            link.download = 'Tamas_Bartos_CV.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        closeMobileMenu();
+    };
+
+    const getButtonText = () => {
+        return isMobile ? 'Download PDF' : viewPdfButtonName;
     };
 
     return (
@@ -48,8 +79,8 @@ const Header: React.FC = () => {
                         <a href="#contact" className="btn btn-primary" aria-label="Get in touch">
                             {getInTouchButtonName}
                         </a>
-                        <Link to="/cv" className="btn btn-secondary" aria-label="View CV">
-                            {viewPdfButtonName}
+                        <Link to="/cv" className="btn btn-secondary" aria-label="View CV" onClick={handleCVButtonClick}>
+                            {getButtonText()}
                         </Link>
                     </div>
 
@@ -94,8 +125,8 @@ const Header: React.FC = () => {
                         <a href="#contact" className="btn btn-primary" aria-label="Get in touch" onClick={closeMobileMenu}>
                             {getInTouchButtonName}
                         </a>
-                        <Link to="/cv" className="btn btn-secondary" aria-label="View CV" onClick={closeMobileMenu}>
-                            {viewPdfButtonName}
+                        <Link to="/cv" className="btn btn-secondary" aria-label="View CV" onClick={handleCVButtonClick}>
+                            {getButtonText()}
                         </Link>
                     </div>
                 </div>

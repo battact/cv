@@ -51,7 +51,7 @@ const Skills: React.FC = () => {
         // Cloud & AWS Services
         { name: 'AWS', icon: <SiAmazon />, category: 'Cloud' },
         { name: 'CDK', icon: <GiCube />, category: 'Cloud' },
-        { name: 'DynamoDB', icon: <TbDatabase />, category: 'Cloud' },
+        { name: 'DynamoDB', icon: <TbDatabase />, category: 'Database' },
         { name: 'PostgreSQL', icon: <SiPostgresql />, category: 'Database' },
         { name: 'MongoDB', icon: <FaDatabase />, category: 'Database' },
 

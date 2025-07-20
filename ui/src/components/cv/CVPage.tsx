@@ -111,7 +111,7 @@ const CVPage: React.FC = () => {
                     <div className="cv-left-column">
                         {/* Profile picture */}
                         <div className="profile-picture-container">
-                            <img src="/tamasbartos.jpg" alt="Tamás Bartos" className="profile-picture" />
+                            <img src="/tamasbartos-pdf.jpg" alt="Tamás Bartos" className="profile-picture" />
                         </div>
 
                         {/* Name */}

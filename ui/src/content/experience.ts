@@ -20,10 +20,10 @@ export const experienceContent = {
                 'Implemented CI/CD pipelines using GitLab for automated deployment and microservices orchestration',
                 'Pioneered AWS CDK (Infrastructure as Code) adoption for the team, standardizing infrastructure deployment and management',
                 'Conducted technical design reviews and mentored team members on AWS best practices and microservices patterns',
-                'Convert business requirements into detailed Jira tickets and design technical architectures for new features',
+                'Converted business requirements into detailed Jira tickets and designed technical architectures for new features',
             ],
             achievements: [
-                'Lead and maintain 30+ microservices across production environment',
+                'Led and maintained 30+ microservices across production environment',
                 'Implemented new license management tool achieving 4x faster processing speed and 40% reduction in bugs',
                 'Optimized asset delivery workflow: reduced processing time from 1500 seconds to 150 seconds for 1000 assets (90% improvement)',
                 'Reduced infrastructure costs by 50% through workflow optimization',
@@ -37,7 +37,7 @@ export const experienceContent = {
             technologies: ['AWS', 'Node.js', 'React', 'Docker', 'Java', 'Microservices', 'Cloud Migration', 'SVG'],
             description: [
                 'Led technology evaluation and architecture decisions for global development teams, recommending modern cloud-native solutions',
-                'Designed and implemented microservices architecture using AWS ECS, Docker containers, and Node.js for scalable applications',
+                'Built scalable microservices architecture using AWS ECS, Docker containers, and Node.js',
                 'Developed React-based SVG asset management application handling 10,000+ complex vector graphics with real-time preview',
                 'Architected and executed cloud migration strategy for legacy Java monolith, transitioning to AWS microservices',
                 'Established CI/CD pipelines and deployment strategies for containerized applications across multiple environments',
@@ -64,15 +64,15 @@ export const experienceContent = {
                 'Scrum',
             ],
             description: [
-                'Designed and developed 10+ AWS microservices for warehouse management system using Node.js and serverless architecture',
+                'Built 10+ serverless microservices for warehouse management system using Node.js and AWS Lambda',
                 'Built custom AWS Lambda authorizer for comprehensive user authentication and authorization across all microservices',
                 'Implemented Infrastructure as Code using AWS SAM (Serverless Application Model) for automated deployments',
                 'Mentored junior developers on AWS best practices, serverless patterns, and microservices development',
             ],
             achievements: [
-                'Created 10+ AWS microservices for warehouse management system with serverless architecture',
-                'Developed custom authorizer handling full user authorization responsibility across all services',
-                'Mentored 3+ junior developers and improved team code quality standards',
+                'Delivered complete serverless warehouse management system with 10+ integrated microservices',
+                'Implemented centralized authorization system reducing security complexity across all services',
+                'Mentored 3+ junior developers and established code quality standards',
             ],
         },
         {

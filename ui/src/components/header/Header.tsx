@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './header.css';
+
+const viewPdfButtonName = 'Change to PDF view';
+const getInTouchButtonName = 'Get in Touch';
 
 const Header: React.FC = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -42,17 +46,11 @@ const Header: React.FC = () => {
                     </nav>
                     <div className="header-actions">
                         <a href="#contact" className="btn btn-primary" aria-label="Get in touch">
-                            Get in Touch
+                            {getInTouchButtonName}
                         </a>
-                        <a
-                            href="/tamas_bartos_cv.pdf"
-                            className="btn btn-secondary"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Download CV (opens in new tab)"
-                        >
-                            Download CV
-                        </a>
+                        <Link to="/cv" className="btn btn-secondary" aria-label="View CV">
+                            {viewPdfButtonName}
+                        </Link>
                     </div>
 
                     {/* Hamburger Menu Button */}
@@ -94,18 +92,11 @@ const Header: React.FC = () => {
                     </div>
                     <div className="mobile-nav-actions">
                         <a href="#contact" className="btn btn-primary" aria-label="Get in touch" onClick={closeMobileMenu}>
-                            Get in Touch
+                            {getInTouchButtonName}
                         </a>
-                        <a
-                            href="/tamas_bartos_cv.pdf"
-                            className="btn btn-secondary"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Download CV (opens in new tab)"
-                            onClick={closeMobileMenu}
-                        >
-                            Download CV
-                        </a>
+                        <Link to="/cv" className="btn btn-secondary" aria-label="View CV" onClick={closeMobileMenu}>
+                            {viewPdfButtonName}
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -85,8 +85,8 @@ export class CvInfrastructureStack extends cdk.Stack {
       errorResponses: [
         {
           httpStatus: 404,
-          responseHttpStatus: 404,
-          responsePagePath: "/error/index.html",
+          responseHttpStatus: 200,
+          responsePagePath: "/index.html",
           ttl: Duration.minutes(30),
         },
       ],

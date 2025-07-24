@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
                                     <FaEnvelope />
                                 </a>
                                 <a
-                                    href={contactContent.linkedin}
+                                    href={`https://${contactContent.linkedin}`}
                                     className="contact-icon-link"
                                     target="_blank"
                                     rel="noopener noreferrer"

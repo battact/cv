@@ -1,36 +1,25 @@
-const CACHE_NAME = 'cv-website-v1';
-const urlsToCache = ['/', '/index.html', '/src/main.tsx', '/src/App.css', '/tamasbartos.jpg', '/tamas_bartos_cv.pdf'];
-
-// Install event
+// No-cache service worker - passes all requests through to network
 self.addEventListener('install', (event) => {
-    event.waitUntil(
-        caches.open(CACHE_NAME).then((cache) => {
-            return cache.addAll(urlsToCache);
-        }),
-    );
+    // Skip waiting to activate immediately
+    self.skipWaiting();
 });
 
-// Fetch event
-self.addEventListener('fetch', (event) => {
-    event.respondWith(
-        caches.match(event.request).then((response) => {
-            // Return cached version or fetch from network
-            return response || fetch(event.request);
-        }),
-    );
-});
-
-// Activate event
 self.addEventListener('activate', (event) => {
+    // Clear all existing caches
     event.waitUntil(
-        caches.keys().then((cacheNames) => {
-            return Promise.all(
-                cacheNames.map((cacheName) => {
-                    if (cacheName !== CACHE_NAME) {
-                        return caches.delete(cacheName);
-                    }
-                }),
-            );
-        }),
+        caches
+            .keys()
+            .then((cacheNames) => {
+                return Promise.all(cacheNames.map((cacheName) => caches.delete(cacheName)));
+            })
+            .then(() => {
+                // Take control of all clients immediately
+                return self.clients.claim();
+            }),
     );
+});
+
+self.addEventListener('fetch', (event) => {
+    // Always fetch from network, no caching
+    event.respondWith(fetch(event.request));
 });

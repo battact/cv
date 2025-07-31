@@ -11,20 +11,19 @@ export const experienceContent = {
     experiences: [
         {
             title: 'Senior Software Engineer',
-            company: 'Joyn GmbH',
+            company: 'ProSiebenSat.1 Media SE',
             period: '2021 - Present',
             technologies: ['Python', 'Node.js', 'AWS', 'Kafka', 'SQS', 'SNS', 'CDK', 'Microservices', 'Docker', 'Jira', 'Scrum'],
             description: [
-                'Designed and architected event-driven microservices using AWS services (Lambda, SQS, SNS, DynamoDB, RDS) and Apache Kafka with Python and Node.js',
+                'Designed and architected 30+ event-driven microservices using AWS services (Lambda, SQS, SNS, DynamoDB, RDS) and Apache Kafka with Python and Node.js',
                 'Led cross-team communication and coordination for microservices integration and deployment',
                 'Implemented CI/CD pipelines using GitLab for automated deployment and microservices orchestration',
                 'Pioneered AWS CDK (Infrastructure as Code) adoption for the team, standardizing infrastructure deployment and management',
                 'Conducted technical design reviews and mentored team members on AWS best practices and microservices patterns',
-                'Converted business requirements into detailed Jira tickets and designed technical architectures for new features',
+                'Converted business requirements into detailed Jira tickets and planned technical architectures for new features',
             ],
             achievements: [
-                'Led and maintained 30+ microservices across production environment',
-                'Implemented new license management tool achieving 4x faster processing speed and 40% reduction in bugs',
+                'Introduced new license management tool achieving 4x faster processing speed and 90% reduction in bugs',
                 'Optimized asset delivery workflow: reduced processing time from 1500 seconds to 150 seconds for 1000 assets (90% improvement)',
                 'Reduced infrastructure costs by 50% through workflow optimization',
                 'Eliminated daily bugs and achieved zero incidents for 1+ years through workflow improvements',
@@ -66,12 +65,12 @@ export const experienceContent = {
             description: [
                 'Built 10+ serverless microservices for warehouse management system using Node.js and AWS Lambda',
                 'Built custom AWS Lambda authorizer for comprehensive user authentication and authorization across all microservices',
-                'Implemented Infrastructure as Code using AWS SAM (Serverless Application Model) for automated deployments',
+                'Refined Infrastructure as Code using AWS SAM (Serverless Application Model) for automated deployments',
                 'Mentored junior developers on AWS best practices, serverless patterns, and microservices development',
             ],
             achievements: [
                 'Delivered complete serverless warehouse management system with 10+ integrated microservices',
-                'Implemented centralized authorization system reducing security complexity across all services',
+                'Introduced centralized authorization system reducing security complexity across all services',
                 'Mentored 3+ junior developers and established code quality standards',
             ],
         },
@@ -95,10 +94,10 @@ export const experienceContent = {
                 'Built intelligent plant monitoring and irrigation system with complex data processing algorithms to determine optimal watering requirements',
                 'Implemented real-time IoT sensors and data analytics for plant health monitoring and automated irrigation decision-making',
                 'Led and coordinated development team including 2 junior developers and outsourced senior developer across multiple projects',
-                'Designed scalable architecture for agricultural IoT systems using AWS cloud services and modern web technologies',
+                'Created scalable architecture for agricultural IoT systems using AWS cloud services and modern web technologies',
             ],
             achievements: [
-                'Implemented complex data processing algorithms for automated plant watering decisions with 95% accuracy',
+                'Engineered complex data processing algorithms for automated plant watering decisions with 95% accuracy',
                 'Improved agricultural system efficiency by 35% through IoT integration and automated processes',
             ],
         },

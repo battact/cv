@@ -6,7 +6,7 @@ import { aboutContent } from '../../content/about';
 import { skillsContent } from '../../content/skills';
 import { experienceContent } from '../../content/experience';
 import { educationContent } from '../../content/education';
-import { FaEnvelope, FaGlobe, FaLightbulb, FaUsers, FaCrown } from 'react-icons/fa';
+import { FaEnvelope, FaGlobe, FaLightbulb, FaUsers, FaCrown, FaPhone, FaTrophy } from 'react-icons/fa';
 import { SiLinkedin } from 'react-icons/si';
 
 const CVPage: React.FC = () => {
@@ -98,8 +98,16 @@ const CVPage: React.FC = () => {
                                 rel="noopener noreferrer"
                                 className="header-link"
                             >
-                                LinkedIn Profile
+                                Tamás Bartos
                             </a>
+                        </div>
+                    </div>
+                    <div className="header-section">
+                        <div className="header-icon">
+                            <FaPhone />
+                        </div>
+                        <div className="header-text">
+                            <span className="header-link">{contactContent.phone}</span>
                         </div>
                     </div>
                 </div>
@@ -227,13 +235,22 @@ const CVPage: React.FC = () => {
                                         {exp.description.map((task, taskIndex) => (
                                             <li key={taskIndex}>{task}</li>
                                         ))}
-                                        {exp.achievements &&
-                                            exp.achievements.map((achievement, achIndex) => (
-                                                <li key={`ach-${achIndex}`}>
-                                                    <strong>Achievement:</strong> {achievement}
-                                                </li>
-                                            ))}
                                     </ul>
+                                    {exp.achievements && exp.achievements.length > 0 && (
+                                        <div className="cv-achievements-section">
+                                            <h5 className="cv-achievements-header">
+                                                <FaTrophy className="cv-achievement-icon" />
+                                                Key Achievements
+                                            </h5>
+                                            <ul className="cv-achievements-list">
+                                                {exp.achievements.map((achievement, achIndex) => (
+                                                    <li key={achIndex} className="cv-achievement-item">
+                                                        {achievement}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    )}
                                 </div>
                             ))}
 
@@ -249,13 +266,22 @@ const CVPage: React.FC = () => {
                                         {exp.description.map((task, taskIndex) => (
                                             <li key={taskIndex}>{task}</li>
                                         ))}
-                                        {exp.achievements &&
-                                            exp.achievements.map((achievement, achIndex) => (
-                                                <li key={`ach-${achIndex}`}>
-                                                    <strong>Achievement:</strong> {achievement}
-                                                </li>
-                                            ))}
                                     </ul>
+                                    {exp.achievements && exp.achievements.length > 0 && (
+                                        <div className="cv-achievements-section">
+                                            <h5 className="cv-achievements-header">
+                                                <FaTrophy className="cv-achievement-icon" />
+                                                Key Achievements
+                                            </h5>
+                                            <ul className="cv-achievements-list">
+                                                {exp.achievements.map((achievement, achIndex) => (
+                                                    <li key={achIndex} className="cv-achievement-item">
+                                                        {achievement}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    )}
                                 </div>
                             ))}
                         </div>

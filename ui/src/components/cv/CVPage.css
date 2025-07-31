@@ -315,6 +315,57 @@
     margin-bottom: 6px;
 }
 
+/* CV Achievements Section */
+.cv-achievements-section {
+    margin-top: 15px;
+    padding: 12px;
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    border-left: 4px solid #f39c12;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(243, 156, 18, 0.15);
+}
+
+.cv-achievements-header {
+    font-size: 13px;
+    font-weight: 700;
+    color: #d68910;
+    margin: 0 0 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cv-achievement-icon {
+    font-size: 14px;
+    color: #f39c12;
+}
+
+.cv-achievements-list {
+    margin: 0;
+    padding-left: 16px;
+    list-style: none;
+}
+
+.cv-achievement-item {
+    font-size: 11px;
+    line-height: 1.5;
+    color: #8b4513;
+    margin-bottom: 4px;
+    padding-left: 12px;
+    position: relative;
+    font-weight: 500;
+}
+
+.cv-achievement-item::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #f39c12;
+    font-weight: bold;
+}
+
 /* Header with Buttons */
 .cv-header {
     position: fixed;
@@ -405,6 +456,7 @@
         padding: 15mm;
         max-width: none;
         min-height: auto;
+        max-height: 571mm;
     }
 
     .cv-top-header {
@@ -453,7 +505,7 @@
         display: flex !important;
         width: calc(100% + 30mm) !important;
         margin-left: -15mm !important;
-        min-height: 555mm !important;
+        min-height: 571mm !important;
     }
 
     .cv-left-column {
@@ -461,7 +513,6 @@
         background: var(--primary-color) !important;
         color: var(--white) !important;
         padding: 8mm !important;
-        min-height: 555mm !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
@@ -470,8 +521,7 @@
         width: 57% !important;
         background: var(--background-light) !important;
         color: var(--text-dark) !important;
-        padding: 8mm !important;
-        min-height: 555mm !important;
+        padding: 0mm 8mm 8mm 8mm !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
@@ -483,7 +533,7 @@
 
     .experience-item {
         page-break-inside: avoid !important;
-        margin-bottom: 12mm !important;
+        margin-bottom: 10mm !important;
     }
 
     .experience-item:first-child {
@@ -636,7 +686,8 @@
         font-weight: 700 !important;
         color: var(--primary-color) !important;
         letter-spacing: 1.2px !important;
-        margin-bottom: 8mm !important;
+        margin-top: 2mm !important;
+        margin-bottom: 4mm !important;
         text-align: left !important;
         border-bottom: 1mm solid var(--primary-color) !important;
         padding-bottom: 3mm !important;
@@ -646,7 +697,7 @@
         font-size: 14px !important;
         font-weight: 700 !important;
         color: var(--primary-color) !important;
-        margin: 0 0 2mm 0 !important;
+        margin: 0 0 1mm 0 !important;
     }
 
     .experience-company {
@@ -673,5 +724,59 @@
         line-height: 1.4 !important;
         color: var(--text-dark) !important;
         margin-bottom: 2mm !important;
+    }
+
+    /* CV Achievements Section - Print Styles */
+    .cv-achievements-section {
+        margin-top: 4mm !important;
+        padding: 4mm !important;
+        background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%) !important;
+        border-left: 2mm solid #f39c12 !important;
+        border-radius: 2mm !important;
+        box-shadow: none !important;
+        page-break-inside: avoid !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .cv-achievements-header {
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        color: #d68910 !important;
+        margin: 0 0 3mm 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 2mm !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.4px !important;
+    }
+
+    .cv-achievement-icon {
+        font-size: 12px !important;
+        color: #f39c12 !important;
+    }
+
+    .cv-achievements-list {
+        margin: 0 !important;
+        padding-left: 5mm !important;
+        list-style: none !important;
+    }
+
+    .cv-achievement-item {
+        font-size: 9px !important;
+        line-height: 1.4 !important;
+        color: #8b4513 !important;
+        margin-bottom: 1.5mm !important;
+        padding-left: 4mm !important;
+        position: relative !important;
+        font-weight: 500 !important;
+    }
+
+    .cv-achievement-item::before {
+        content: '▸' !important;
+        position: absolute !important;
+        left: 0 !important;
+        color: #f39c12 !important;
+        font-weight: bold !important;
     }
 }

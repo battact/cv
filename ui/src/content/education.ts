@@ -12,7 +12,7 @@ export const educationContent = {
             period: '2007 - 2011',
         },
         {
-            degree: "Bachelor's Degree in Economic Informatics",
+            degree: "Bachelor's degree in Economic Informatics",
             institution: 'University of Szeged',
             period: '2011 - 2017',
         },

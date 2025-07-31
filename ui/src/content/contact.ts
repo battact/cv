@@ -3,4 +3,5 @@ export const contactContent = {
     linkedin: 'linkedin.com/in/tam%C3%A1s-bartos-5654aa133/',
     github: 'https://github.com/battact',
     website: 'tamasbartos.com',
+    phone: '+36309207675',
 } as const;
